@@ -3,7 +3,6 @@ import {
   KernText,
   KernRow,
   KernColumn,
-  KernCard,
   KernAlert,
   KernContainer,
 } from "@kern-ux-annex/kern-react-kit";
@@ -17,6 +16,7 @@ import {
   sideActivityOptions,
   hasEmployeesOptions,
 } from "@/app/types";
+import { CustomCard } from "@/components/CustomCard";
 
 interface Step6ZusammenfassungProps {
   formData: FormData;
@@ -61,37 +61,34 @@ export function Step6Zusammenfassung({ formData }: Step6ZusammenfassungProps) {
 
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-          <KernCard
-            title="Ihre Angaben"
-            body={
-              <KernContainer>
-                <KernRow>
-                  <KernColumn sizes={12}>
-                    <KernText bold>Rechtsform:</KernText>
-                    <KernText>{getRechtsformLabel(formData.rechtsform)}</KernText>
-                  </KernColumn>
-                </KernRow>
-                <KernRow>
-                  <KernColumn sizes={12}>
-                    <KernText bold>Tätigkeit:</KernText>
-                    <KernText>{getTaetigkeitLabel(formData.taetigkeit)}</KernText>
-                  </KernColumn>
-                </KernRow>
-                <KernRow>
-                  <KernColumn sizes={12}>
-                    <KernText bold>Nebentätigkeit:</KernText>
-                    <KernText>{getSideActivityLabel(formData.isSideActivity)}</KernText>
-                  </KernColumn>
-                </KernRow>
-                <KernRow>
-                  <KernColumn sizes={12}>
-                    <KernText bold>Angestellte:</KernText>
-                    <KernText>{getHasEmployeesLabel(formData.hasEmployees)}</KernText>
-                  </KernColumn>
-                </KernRow>
-              </KernContainer>
-            }
-          />
+          <CustomCard title="Ihre Angaben">
+            <KernContainer>
+              <KernRow>
+                <KernColumn sizes={12}>
+                  <KernText bold>Rechtsform:</KernText>
+                  <KernText>{getRechtsformLabel(formData.rechtsform)}</KernText>
+                </KernColumn>
+              </KernRow>
+              <KernRow>
+                <KernColumn sizes={12}>
+                  <KernText bold>Tätigkeit:</KernText>
+                  <KernText>{getTaetigkeitLabel(formData.taetigkeit)}</KernText>
+                </KernColumn>
+              </KernRow>
+              <KernRow>
+                <KernColumn sizes={12}>
+                  <KernText bold>Nebentätigkeit:</KernText>
+                  <KernText>{getSideActivityLabel(formData.isSideActivity)}</KernText>
+                </KernColumn>
+              </KernRow>
+              <KernRow>
+                <KernColumn sizes={12}>
+                  <KernText bold>Angestellte:</KernText>
+                  <KernText>{getHasEmployeesLabel(formData.hasEmployees)}</KernText>
+                </KernColumn>
+              </KernRow>
+            </KernContainer>
+          </CustomCard>
         </KernColumn>
       </KernRow>
 

@@ -94,46 +94,46 @@ export default function Home() {
       </KernRow>
 
       {/* Step 1: Rechtsform */}
-      {currentStep === 1 && (
+      <div style={{ display: currentStep === 1 ? "block" : "none" }}>
         <Step1Rechtsform
           formData={formData}
           onRechtsformChange={handleRechtsformChange}
         />
-      )}
+      </div>
 
       {/* Step 2: Tätigkeit */}
-      {currentStep === 2 && (
+      <div style={{ display: currentStep === 2 ? "block" : "none" }}>
         <Step2Taetigkeit
           formData={formData}
           onTaetigkeitChange={handleTaetigkeitChange}
         />
-      )}
+      </div>
 
       {/* Step 3: Nebentätigkeit */}
-      {currentStep === 3 && (
+      <div style={{ display: currentStep === 3 ? "block" : "none" }}>
         <Step3Nebentaetigkeit
           formData={formData}
           onSideActivityChange={handleSideActivityChange}
         />
-      )}
+      </div>
 
       {/* Step 4: Angestellte */}
-      {currentStep === 4 && (
+      <div style={{ display: currentStep === 4 ? "block" : "none" }}>
         <Step4Angestellte
           formData={formData}
           onHasEmployeesChange={handleHasEmployeesChange}
         />
-      )}
+      </div>
 
       {/* Step 5: Checkliste */}
-      {currentStep === 5 && (
+      <div style={{ display: currentStep === 5 ? "block" : "none" }}>
         <Step5Checkliste formData={formData} />
-      )}
+      </div>
 
       {/* Step 6: Zusammenfassung */}
-      {currentStep === 6 && (
+      <div style={{ display: currentStep === 6 ? "block" : "none" }}>
         <Step6Zusammenfassung formData={formData} />
-      )}
+      </div>
 
       {/* Navigation buttons */}
       <KernRow>

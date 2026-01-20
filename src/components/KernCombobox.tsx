@@ -1,7 +1,7 @@
 "use client";
 
 import { Combobox } from "@base-ui/react/combobox";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import styles from "./KernCombobox.module.css";
 
 export interface ComboboxOption {
@@ -32,7 +32,28 @@ export function KernCombobox({
   error,
   required,
 }: KernComboboxProps) {
-  const [inputValue, setInputValue] = useState("");
+  // Initialize inputValue from the selected value, or find the label for the selected value
+  const getInitialInputValue = () => {
+    if (value) {
+      const selectedOption = options.find((opt) => opt.value === value);
+      return selectedOption ? selectedOption.label : "";
+    }
+    return "";
+  };
+
+  const [inputValue, setInputValue] = useState(getInitialInputValue);
+
+  // Sync inputValue when value prop changes (e.g., when navigating back/forth)
+  useEffect(() => {
+    if (value) {
+      const selectedOption = options.find((opt) => opt.value === value);
+      if (selectedOption) {
+        setInputValue(selectedOption.label);
+      }
+    } else {
+      setInputValue("");
+    }
+  }, [value, options]);
 
   const filteredOptions = useMemo(() => {
     if (!inputValue) return options;
@@ -53,12 +74,24 @@ export function KernCombobox({
 
       <Combobox.Root
         value={value}
+        inputValue={inputValue}
         onValueChange={(val) => {
           if (val !== null) {
             onChange(val);
+            // Update inputValue to show the selected option's label
+            const selectedOption = options.find((opt) => opt.value === val);
+            if (selectedOption) {
+              setInputValue(selectedOption.label);
+            }
           }
         }}
-        onInputValueChange={(val) => setInputValue(val)}
+        onInputValueChange={(val) => {
+          setInputValue(val);
+          // If input is cleared, clear the selected value
+          if (!val) {
+            onChange("");
+          }
+        }}
       >
         <div className={styles.inputWrapper}>
           <Combobox.Input
