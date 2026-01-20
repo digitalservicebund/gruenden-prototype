@@ -22,10 +22,42 @@ export const rechtsformOptions: RechtsformOption[] = [
   { value: "kg", label: "Kommanditgesellschaft (KG)" },
 ];
 
+export interface TaetigkeitOption {
+  value: string;
+  label: string;
+}
+
+export const taetigkeitOptions: TaetigkeitOption[] = [
+  { value: "eisanbieter", label: "Eisanbieter" },
+  { value: "eiscafe", label: "Eiscafe" },
+  { value: "eisdiele", label: "Eisdiele" },
+  { value: "eisenbahngesellschaft", label: "Eisenbahngesellschaft" },
+];
+
+export type SideActivity = "yes" | "no" | "";
+
+export const sideActivityOptions = [
+  { value: "yes", label: "Ja" },
+  { value: "no", label: "Nein" },
+];
+
+export type HasEmployees = "with" | "without" | "";
+
+export const hasEmployeesOptions = [
+  { value: "with", label: "Mit Angestellten" },
+  { value: "without", label: "Ohne Angestellte" },
+];
+
 export interface FormData {
   rechtsform: Rechtsform | "";
+  taetigkeit: string;
+  isSideActivity: SideActivity;
+  hasEmployees: HasEmployees;
 }
 
 export const initialFormData: FormData = {
   rechtsform: "",
+  taetigkeit: "",
+  isSideActivity: "",
+  hasEmployees: "",
 };
