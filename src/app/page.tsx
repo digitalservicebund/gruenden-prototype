@@ -13,6 +13,7 @@ import {
   KernAlert,
 } from "@kern-ux-annex/kern-react-kit";
 import { KernCombobox } from "@/components/KernCombobox";
+import { RechtsformHelper } from "@/components/RechtsformHelper";
 import {
   type FormData,
   type Rechtsform,
@@ -25,7 +26,7 @@ import {
   hasEmployeesOptions,
 } from "./types";
 
-const TOTAL_STEPS = 5;
+const TOTAL_STEPS = 6;
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -126,6 +127,12 @@ export default function Home() {
               <KernText>
                 Bitte wählen Sie die Rechtsform Ihres Unternehmens.
               </KernText>
+            </KernColumn>
+          </KernRow>
+
+          <KernRow>
+            <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
+              <RechtsformHelper onSelect={handleRechtsformChange} />
             </KernColumn>
           </KernRow>
 
@@ -260,8 +267,54 @@ export default function Home() {
         </>
       )}
 
-      {/* Step 5: Zusammenfassung */}
+      {/* Step 5: Checklist */}
       {currentStep === 5 && (
+        <>
+          <KernRow>
+            <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
+              <KernHeading level={2}>Deine Checkliste</KernHeading>
+            </KernColumn>
+          </KernRow>
+
+          <KernRow>
+            <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
+              <KernText>
+                Basierend auf deinen Angaben haben wir eine Checkliste für dich erstellt.
+              </KernText>
+            </KernColumn>
+          </KernRow>
+
+          <KernRow>
+            <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
+              <KernCard
+                title="Nächste Schritte"
+                body={
+                  <ul className="kern-list">
+                    <li>☐ Placeholder: Gewerbeanmeldung</li>
+                    <li>☐ Placeholder: Finanzamt Fragebogen</li>
+                    <li>☐ Placeholder: Geschäftskonto eröffnen</li>
+                    <li>☐ Placeholder: Versicherungen prüfen</li>
+                    <li>☐ Placeholder: Buchhaltung einrichten</li>
+                  </ul>
+                }
+              />
+            </KernColumn>
+          </KernRow>
+
+          <KernRow>
+            <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
+              <KernAlert
+                title="Hinweis"
+                variant="info"
+                body="Die Checkliste wird basierend auf deinen Angaben personalisiert. Dies sind Platzhalter."
+              />
+            </KernColumn>
+          </KernRow>
+        </>
+      )}
+
+      {/* Step 6: Zusammenfassung */}
+      {currentStep === 6 && (
         <>
           <KernRow>
             <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
