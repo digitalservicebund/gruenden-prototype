@@ -14,6 +14,7 @@ import {
 } from "@kern-ux-annex/kern-react-kit";
 import { KernCombobox } from "@/components/KernCombobox";
 import { RechtsformHelper } from "@/components/RechtsformHelper";
+import { CustomCard } from "@/components/CustomCard";
 import {
   type FormData,
   type Rechtsform,
@@ -536,30 +537,151 @@ export default function Home() {
           {/* Section: Vorbereiten */}
           <KernRow>
             <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-              <KernCard
-                title=""
-                preline="Vorbereiten"
-                body={
-                  <KernContainer>
-                    {/* Name prüfen */}
-                    <KernRow>
-                      <KernColumn sizes={12}>
-                        <KernHeading level={4}>Name prüfen</KernHeading>
-                        <KernText>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-                        </KernText>
-                        <KernRow>
-                          <KernColumn sizes={12}>
-                            <KernButton text="Mehr lesen" onClick={() => {}} />
-                          </KernColumn>
-                        </KernRow>
-                      </KernColumn>
-                    </KernRow>
+              <CustomCard preline="Vorbereiten">
+                <KernContainer>
+                  {/* Name prüfen */}
+                  <KernRow>
+                    <KernColumn sizes={12}>
+                      <KernHeading level={4}>Name prüfen</KernHeading>
+                      <KernText>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                      </KernText>
+                      <KernRow>
+                        <KernColumn sizes={12}>
+                          <KernButton text="Mehr lesen" onClick={() => {}} />
+                        </KernColumn>
+                      </KernRow>
+                    </KernColumn>
+                  </KernRow>
 
-                    {/* Gesellschaftsvertrag aufsetzen */}
+                  {/* Gesellschaftsvertrag aufsetzen */}
+                  <KernRow>
+                    <KernColumn sizes={12}>
+                      <KernHeading level={4}>Gesellschaftsvertrag aufsetzen</KernHeading>
+                      <KernText>
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      </KernText>
+                      <KernRow>
+                        <KernColumn sizes={12}>
+                          <KernButton text="Mehr lesen" onClick={() => {}} />
+                        </KernColumn>
+                      </KernRow>
+                    </KernColumn>
+                  </KernRow>
+
+                  {/* Notartermin vereinbaren */}
+                  <KernRow>
+                    <KernColumn sizes={12}>
+                      <KernHeading level={4}>Notartermin vereinbaren</KernHeading>
+                      <KernText>
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                      </KernText>
+                      <KernRow>
+                        <KernColumn sizes={12}>
+                          <KernButton text="Mehr lesen" onClick={() => {}} />
+                        </KernColumn>
+                      </KernRow>
+                    </KernColumn>
+                  </KernRow>
+                </KernContainer>
+              </CustomCard>
+            </KernColumn>
+          </KernRow>
+
+          {/* Section: Gründen */}
+          <KernRow>
+            <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
+              <CustomCard preline="Gründen">
+                <KernContainer>
+                  {/* Notariell gründen */}
+                  <KernRow>
+                    <KernColumn sizes={12}>
+                      <KernHeading level={4}>Notariell gründen</KernHeading>
+                      <KernText>
+                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam est.
+                      </KernText>
+                      <KernRow>
+                        <KernColumn sizes={12}>
+                          <KernButton text="Mehr lesen" onClick={() => {}} />
+                        </KernColumn>
+                      </KernRow>
+                    </KernColumn>
+                  </KernRow>
+
+                  {/* Geschäftskonto öffnen */}
+                  <KernRow>
+                    <KernColumn sizes={12}>
+                      <KernHeading level={4}>Geschäftskonto öffnen</KernHeading>
+                      <KernText>
+                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+                      </KernText>
+                      <KernRow>
+                        <KernColumn sizes={12}>
+                          <KernButton text="Mehr lesen" onClick={() => {}} />
+                        </KernColumn>
+                      </KernRow>
+                    </KernColumn>
+                  </KernRow>
+
+                  {/* Stammkapitel einzahlen und nachweisen */}
+                  <KernRow>
+                    <KernColumn sizes={12}>
+                      <KernHeading level={4}>Stammkapitel einzahlen und nachweisen</KernHeading>
+                      <KernText>
+                        Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio nam libero tempore cum soluta nobis est eligendi optio.
+                      </KernText>
+                      <KernRow>
+                        <KernColumn sizes={12}>
+                          <KernButton text="Mehr lesen" onClick={() => {}} />
+                        </KernColumn>
+                      </KernRow>
+                    </KernColumn>
+                  </KernRow>
+
+                  {/* Handelsregistereintrag */}
+                  <KernRow>
+                    <KernColumn sizes={12}>
+                      <KernHeading level={4}>Handelsregistereintrag</KernHeading>
+                      <KernText>
+                        Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus ut aut reiciendis voluptatibus maiores alias.
+                      </KernText>
+                      <KernRow>
+                        <KernColumn sizes={12}>
+                          <KernButton text="Mehr lesen" onClick={() => {}} />
+                        </KernColumn>
+                      </KernRow>
+                    </KernColumn>
+                  </KernRow>
+
+                  {/* Unternehmen anmelden */}
+                  <KernRow>
+                    <KernColumn sizes={12}>
+                      <KernHeading level={4}>Unternehmen anmelden</KernHeading>
+                      <KernText>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </KernText>
+                      <KernRow>
+                        <KernColumn sizes={12}>
+                          <KernButton text="Mehr lesen" onClick={() => {}} />
+                        </KernColumn>
+                      </KernRow>
+                    </KernColumn>
+                  </KernRow>
+                </KernContainer>
+              </CustomCard>
+            </KernColumn>
+          </KernRow>
+
+          {/* Section: Mitarbeiter einstellen */}
+          {formData.hasEmployees === "with" && (
+            <KernRow>
+              <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
+                <CustomCard preline="Mitarbeiter einstellen">
+                  <KernContainer>
+                    {/* Unvallversicherung bei Berufsgenossenschaft */}
                     <KernRow>
                       <KernColumn sizes={12}>
-                        <KernHeading level={4}>Gesellschaftsvertrag aufsetzen</KernHeading>
+                        <KernHeading level={4}>Unvallversicherung bei Berufsgenossenschaft</KernHeading>
                         <KernText>
                           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </KernText>
@@ -571,10 +693,10 @@ export default function Home() {
                       </KernColumn>
                     </KernRow>
 
-                    {/* Notartermin vereinbaren */}
+                    {/* Betriebsnummer beantragen */}
                     <KernRow>
                       <KernColumn sizes={12}>
-                        <KernHeading level={4}>Notartermin vereinbaren</KernHeading>
+                        <KernHeading level={4}>Betriebsnummer beantragen</KernHeading>
                         <KernText>
                           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
                         </KernText>
@@ -586,140 +708,7 @@ export default function Home() {
                       </KernColumn>
                     </KernRow>
                   </KernContainer>
-                }
-              />
-            </KernColumn>
-          </KernRow>
-
-          {/* Section: Gründen */}
-          <KernRow>
-            <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-              <KernCard
-                title=""
-                preline="Gründen"
-                body={
-                  <KernContainer>
-                    {/* Notariell gründen */}
-                    <KernRow>
-                      <KernColumn sizes={12}>
-                        <KernHeading level={4}>Notariell gründen</KernHeading>
-                        <KernText>
-                          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam est.
-                        </KernText>
-                        <KernRow>
-                          <KernColumn sizes={12}>
-                            <KernButton text="Mehr lesen" onClick={() => {}} />
-                          </KernColumn>
-                        </KernRow>
-                      </KernColumn>
-                    </KernRow>
-
-                    {/* Geschäftskonto öffnen */}
-                    <KernRow>
-                      <KernColumn sizes={12}>
-                        <KernHeading level={4}>Geschäftskonto öffnen</KernHeading>
-                        <KernText>
-                          At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
-                        </KernText>
-                        <KernRow>
-                          <KernColumn sizes={12}>
-                            <KernButton text="Mehr lesen" onClick={() => {}} />
-                          </KernColumn>
-                        </KernRow>
-                      </KernColumn>
-                    </KernRow>
-
-                    {/* Stammkapitel einzahlen und nachweisen */}
-                    <KernRow>
-                      <KernColumn sizes={12}>
-                        <KernHeading level={4}>Stammkapitel einzahlen und nachweisen</KernHeading>
-                        <KernText>
-                          Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio nam libero tempore cum soluta nobis est eligendi optio.
-                        </KernText>
-                        <KernRow>
-                          <KernColumn sizes={12}>
-                            <KernButton text="Mehr lesen" onClick={() => {}} />
-                          </KernColumn>
-                        </KernRow>
-                      </KernColumn>
-                    </KernRow>
-
-                    {/* Handelsregistereintrag */}
-                    <KernRow>
-                      <KernColumn sizes={12}>
-                        <KernHeading level={4}>Handelsregistereintrag</KernHeading>
-                        <KernText>
-                          Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus ut aut reiciendis voluptatibus maiores alias.
-                        </KernText>
-                        <KernRow>
-                          <KernColumn sizes={12}>
-                            <KernButton text="Mehr lesen" onClick={() => {}} />
-                          </KernColumn>
-                        </KernRow>
-                      </KernColumn>
-                    </KernRow>
-
-                    {/* Unternehmen anmelden */}
-                    <KernRow>
-                      <KernColumn sizes={12}>
-                        <KernHeading level={4}>Unternehmen anmelden</KernHeading>
-                        <KernText>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </KernText>
-                        <KernRow>
-                          <KernColumn sizes={12}>
-                            <KernButton text="Mehr lesen" onClick={() => {}} />
-                          </KernColumn>
-                        </KernRow>
-                      </KernColumn>
-                    </KernRow>
-                  </KernContainer>
-                }
-              />
-            </KernColumn>
-          </KernRow>
-
-          {/* Section: Mitarbeiter einstellen */}
-          {formData.hasEmployees === "with" && (
-            <KernRow>
-              <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-                <KernCard
-                  title=""
-                  preline="Mitarbeiter einstellen"
-                  body={
-                    <KernContainer>
-                      {/* Unvallversicherung bei Berufsgenossenschaft */}
-                      <KernRow>
-                        <KernColumn sizes={12}>
-                          <KernHeading level={4}>Unvallversicherung bei Berufsgenossenschaft</KernHeading>
-                          <KernText>
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                          </KernText>
-                          <KernRow>
-                            <KernColumn sizes={12}>
-                              <KernButton text="Mehr lesen" onClick={() => {}} />
-                            </KernColumn>
-                          </KernRow>
-                        </KernColumn>
-                      </KernRow>
-
-                      {/* Betriebsnummer beantragen */}
-                      <KernRow>
-                        <KernColumn sizes={12}>
-                          <KernHeading level={4}>Betriebsnummer beantragen</KernHeading>
-                          <KernText>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                          </KernText>
-                          <KernRow>
-                            <KernColumn sizes={12}>
-                              <KernButton text="Mehr lesen" onClick={() => {}} />
-                            </KernColumn>
-                          </KernRow>
-                        </KernColumn>
-                      </KernRow>
-                    </KernContainer>
-                  }
-                />
+                </CustomCard>
               </KernColumn>
             </KernRow>
           )}
@@ -727,43 +716,39 @@ export default function Home() {
           {/* Section: Weitere Schritte */}
           <KernRow>
             <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-              <KernCard
-                title=""
-                preline="Weitere Schritte"
-                body={
-                  <KernContainer>
-                    {/* IHK Anmeldung */}
-                    <KernRow>
-                      <KernColumn sizes={12}>
-                        <KernHeading level={4}>IHK Anmeldung</KernHeading>
-                        <KernText>
-                          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam est.
-                        </KernText>
-                        <KernRow>
-                          <KernColumn sizes={12}>
-                            <KernButton text="Mehr lesen" onClick={() => {}} />
-                          </KernColumn>
-                        </KernRow>
-                      </KernColumn>
-                    </KernRow>
+              <CustomCard preline="Weitere Schritte">
+                <KernContainer>
+                  {/* IHK Anmeldung */}
+                  <KernRow>
+                    <KernColumn sizes={12}>
+                      <KernHeading level={4}>IHK Anmeldung</KernHeading>
+                      <KernText>
+                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam est.
+                      </KernText>
+                      <KernRow>
+                        <KernColumn sizes={12}>
+                          <KernButton text="Mehr lesen" onClick={() => {}} />
+                        </KernColumn>
+                      </KernRow>
+                    </KernColumn>
+                  </KernRow>
 
-                    {/* Sozialversicherungspflicht prüfen */}
-                    <KernRow>
-                      <KernColumn sizes={12}>
-                        <KernHeading level={4}>Sozialversicherungspflicht prüfen</KernHeading>
-                        <KernText>
-                          At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
-                        </KernText>
-                        <KernRow>
-                          <KernColumn sizes={12}>
-                            <KernButton text="Mehr lesen" onClick={() => {}} />
-                          </KernColumn>
-                        </KernRow>
-                      </KernColumn>
-                    </KernRow>
-                  </KernContainer>
-                }
-              />
+                  {/* Sozialversicherungspflicht prüfen */}
+                  <KernRow>
+                    <KernColumn sizes={12}>
+                      <KernHeading level={4}>Sozialversicherungspflicht prüfen</KernHeading>
+                      <KernText>
+                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+                      </KernText>
+                      <KernRow>
+                        <KernColumn sizes={12}>
+                          <KernButton text="Mehr lesen" onClick={() => {}} />
+                        </KernColumn>
+                      </KernRow>
+                    </KernColumn>
+                  </KernRow>
+                </KernContainer>
+              </CustomCard>
             </KernColumn>
           </KernRow>
         </>

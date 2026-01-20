@@ -1,0 +1,70 @@
+.card {
+  display: flex;
+  padding: var(--kern-metric-space-none, 0px);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--kern-metric-space-none, 0px);
+  flex-shrink: 0;
+  border-radius: var(--kern-metric-border-radius-default, 4px);
+  border: var(--kern-metric-border-width-light, 1px) solid var(--layout-border, #A5AAC3);
+  background: var(--kern-color-layout-background-default, #FFF);
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  padding: var(--kern-metric-space-large, 24px);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--kern-metric-space-default, 16px);
+  align-self: stretch;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  padding: var(--kern-metric-space-none, 0px);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--kern-metric-space-none, 0px);
+  align-self: stretch;
+}
+
+.preline {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  color: var(--kern-color-layout-text-muted, #404565);
+  font-family: var(--kern-typography-font-family-default, "Fira Sans");
+  font-style: normal;
+  letter-spacing: var(--kern-metric-space-none, 0px);
+  padding: var(--kern-metric-baseline-preline-default-padding-top, 6px) var(--kern-metric-space-none, 0px) var(--kern-metric-baseline-preline-default-padding-bottom, 2px) var(--kern-metric-space-none, 0px);
+  font-size: var(--kern-typography-font-size-static-medium, 18px);
+  font-weight: var(--kern-typography-font-weight-regular, 400);
+  line-height: var(--kern-typography-line-height-static-medium, 24px);
+  width: fit-content;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  color: var(--kern-color-layout-text-default, #171A2B);
+  font-family: var(--kern-typography-font-family-default, "Fira Sans");
+  font-style: normal;
+  letter-spacing: var(--kern-metric-space-none, 0px);
+}
+
+.body {
+  display: flex;
+  padding: var(--kern-metric-space-none, 0px);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--kern-metric-space-small, 8px);
+  align-self: stretch;
+  flex: 1 1 auto;
+}
