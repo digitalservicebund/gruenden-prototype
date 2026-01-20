@@ -537,7 +537,8 @@ export default function Home() {
           <KernRow>
             <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
               <KernCard
-                title="Vorbereiten"
+                title=""
+                preline="Vorbereiten"
                 body={
                   <KernContainer>
                     {/* Name prüfen */}
@@ -594,7 +595,8 @@ export default function Home() {
           <KernRow>
             <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
               <KernCard
-                title="Gründen"
+                title=""
+                preline="Gründen"
                 body={
                   <KernContainer>
                     {/* Notariell gründen */}
@@ -682,7 +684,8 @@ export default function Home() {
             <KernRow>
               <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
                 <KernCard
-                  title="Mitarbeiter einstellen"
+                  title=""
+                  preline="Mitarbeiter einstellen"
                   body={
                     <KernContainer>
                       {/* Unvallversicherung bei Berufsgenossenschaft */}
@@ -725,7 +728,8 @@ export default function Home() {
           <KernRow>
             <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
               <KernCard
-                title="Weitere Schritte"
+                title=""
+                preline="Weitere Schritte"
                 body={
                   <KernContainer>
                     {/* IHK Anmeldung */}
