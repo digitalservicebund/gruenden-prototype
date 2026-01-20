@@ -13,6 +13,7 @@ import {
   KernAlert,
 } from "@kern-ux-annex/kern-react-kit";
 import { KernCombobox } from "@/components/KernCombobox";
+import { RechtsformHelper } from "@/components/RechtsformHelper";
 import {
   type FormData,
   type Rechtsform,
@@ -26,7 +27,7 @@ import {
   hasEmployeesOptions,
 } from "./types";
 
-const TOTAL_STEPS = 5;
+const TOTAL_STEPS = 6;
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -170,6 +171,9 @@ export default function Home() {
     if (currentStep === 4) {
       return formData.hasEmployees !== "";
     }
+    if (currentStep === 5) {
+      return true; // Checklist step - no validation needed
+    }
     return true;
   };
 
@@ -239,6 +243,12 @@ export default function Home() {
                 }))}
                 onChange={handleRechtsformChange}
               />
+            </KernColumn>
+          </KernRow>
+
+          <KernRow>
+            <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
+              <RechtsformHelper onSelect={handleRechtsformChange} />
             </KernColumn>
           </KernRow>
         </>
@@ -506,8 +516,82 @@ export default function Home() {
         </>
       )}
 
-      {/* Step 5: Zusammenfassung */}
+      {/* Step 5: Checkliste */}
       {currentStep === 5 && (
+        <>
+          <KernRow>
+            <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
+              <KernHeading level={2}>Checkliste</KernHeading>
+            </KernColumn>
+          </KernRow>
+
+          <KernRow>
+            <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
+              <KernText>
+                Basierend auf Ihren Angaben haben wir eine Checkliste für die nächsten Schritte erstellt.
+              </KernText>
+            </KernColumn>
+          </KernRow>
+
+          <KernRow>
+            <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
+              <KernCard
+                title="Ihre Checkliste"
+                body={
+                  <KernContainer>
+                    <KernRow>
+                      <KernColumn sizes={12}>
+                        <KernText>• Gewerbeanmeldung</KernText>
+                      </KernColumn>
+                    </KernRow>
+                    <KernRow>
+                      <KernColumn sizes={12}>
+                        <KernText>• Finanzamt Fragebogen</KernText>
+                      </KernColumn>
+                    </KernRow>
+                    <KernRow>
+                      <KernColumn sizes={12}>
+                        <KernText>• Geschäftskonto eröffnen</KernText>
+                      </KernColumn>
+                    </KernRow>
+                    {formData.hasEmployees === "with" && (
+                      <>
+                        <KernRow>
+                          <KernColumn sizes={12}>
+                            <KernText>• Sozialversicherungsanmeldung</KernText>
+                          </KernColumn>
+                        </KernRow>
+                        <KernRow>
+                          <KernColumn sizes={12}>
+                            <KernText>• Lohnabrechnung einrichten</KernText>
+                          </KernColumn>
+                        </KernRow>
+                      </>
+                    )}
+                    {(formData.rechtsform === "gmbh" || formData.rechtsform === "ug" || formData.rechtsform === "ag") && (
+                      <KernRow>
+                        <KernColumn sizes={12}>
+                          <KernText>• Handelsregistereintragung</KernText>
+                        </KernColumn>
+                      </KernRow>
+                    )}
+                    {formData.rechtsform === "gmbh" && (
+                      <KernRow>
+                        <KernColumn sizes={12}>
+                          <KernText>• Stammkapital einbringen</KernText>
+                        </KernColumn>
+                      </KernRow>
+                    )}
+                  </KernContainer>
+                }
+              />
+            </KernColumn>
+          </KernRow>
+        </>
+      )}
+
+      {/* Step 6: Zusammenfassung */}
+      {currentStep === 6 && (
         <>
           <KernRow>
             <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
