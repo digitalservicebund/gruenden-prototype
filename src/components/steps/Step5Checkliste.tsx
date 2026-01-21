@@ -3,11 +3,12 @@ import {
   KernText,
   KernRow,
   KernColumn,
-  KernButton,
   KernContainer,
   KernAlert,
   KernAccordion,
 } from "@kern-ux-annex/kern-react-kit";
+import { PrimaryButton } from "@/components/PrimaryButton";
+import { SecondaryButton } from "@/components/SecondaryButton";
 import {
   type FormData,
   type Rechtsform,
@@ -79,7 +80,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
-                  <KernButton text="Mehr lesen" onClick={() => {}} />
+                  <SecondaryButton text="Mehr lesen" onClick={() => {}} icon="arrow-forward" iconPlacement="right" />
                 </KernColumn>
               </KernRow>
             </KernColumn>
@@ -94,7 +95,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
-                  <KernButton text="Mehr lesen" onClick={() => {}} />
+                  <SecondaryButton text="Mehr lesen" onClick={() => {}} icon="arrow-forward" iconPlacement="right" />
                 </KernColumn>
               </KernRow>
             </KernColumn>
@@ -115,7 +116,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
-                  <KernButton text="Mehr lesen" onClick={() => {}} />
+                  <SecondaryButton text="Mehr lesen" onClick={() => {}} icon="arrow-forward" iconPlacement="right" />
                 </KernColumn>
               </KernRow>
             </KernColumn>
@@ -130,7 +131,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
-                  <KernButton text="Mehr lesen" onClick={() => {}} />
+                  <SecondaryButton text="Mehr lesen" onClick={() => {}} icon="arrow-forward" iconPlacement="right" />
                 </KernColumn>
               </KernRow>
             </KernColumn>
@@ -145,7 +146,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
-                  <KernButton text="Mehr lesen" onClick={() => {}} />
+                  <SecondaryButton text="Mehr lesen" onClick={() => {}} icon="arrow-forward" iconPlacement="right" />
                 </KernColumn>
               </KernRow>
             </KernColumn>
@@ -160,7 +161,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
-                  <KernButton text="Mehr lesen" onClick={() => {}} />
+                  <SecondaryButton text="Mehr lesen" onClick={() => {}} icon="arrow-forward" iconPlacement="right" />
                 </KernColumn>
               </KernRow>
             </KernColumn>
@@ -175,7 +176,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
-                  <KernButton text="Mehr lesen" onClick={() => {}} />
+                  <PrimaryButton text="Antrag starten" onClick={() => {}} />
                 </KernColumn>
               </KernRow>
             </KernColumn>
@@ -198,7 +199,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
                     </KernText>
                     <KernRow>
                       <KernColumn sizes={12}>
-                        <KernButton text="Mehr lesen" onClick={() => {}} />
+                        <SecondaryButton text="Mehr lesen" onClick={() => {}} icon="arrow-forward" iconPlacement="right" />
                       </KernColumn>
                     </KernRow>
                   </KernColumn>
@@ -213,7 +214,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
                     </KernText>
                     <KernRow>
                       <KernColumn sizes={12}>
-                        <KernButton text="Mehr lesen" onClick={() => {}} />
+                        <SecondaryButton text="Mehr lesen" onClick={() => {}} icon="arrow-forward" iconPlacement="right" />
                       </KernColumn>
                     </KernRow>
                   </KernColumn>
@@ -236,7 +237,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
-                  <KernButton text="Mehr lesen" onClick={() => {}} />
+                  <SecondaryButton text="Mehr lesen" onClick={() => {}} icon="arrow-forward" iconPlacement="right" />
                 </KernColumn>
               </KernRow>
             </KernColumn>
@@ -251,7 +252,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
-                  <KernButton text="Mehr lesen" onClick={() => {}} />
+                  <SecondaryButton text="Mehr lesen" onClick={() => {}} icon="arrow-forward" iconPlacement="right" />
                 </KernColumn>
               </KernRow>
             </KernColumn>
@@ -276,7 +277,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
-                  <KernButton text="Mehr lesen" onClick={() => {}} />
+                  <SecondaryButton text="Mehr lesen" onClick={() => {}} icon="arrow-forward" iconPlacement="right" />
                 </KernColumn>
               </KernRow>
             </KernColumn>
@@ -296,7 +297,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
-                  <KernButton text="Mehr lesen" onClick={() => {}} />
+                  <SecondaryButton text="Mehr lesen" onClick={() => {}} icon="arrow-forward" iconPlacement="right" />
                 </KernColumn>
               </KernRow>
             </KernColumn>
@@ -316,7 +317,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
-                  <KernButton text="Mehr lesen" onClick={() => {}} />
+                  <SecondaryButton text="Mehr lesen" onClick={() => {}} icon="arrow-forward" iconPlacement="right" />
                 </KernColumn>
               </KernRow>
             </KernColumn>
