@@ -99,21 +99,6 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
               </KernRow>
             </KernColumn>
           </KernRow>
-
-          {/* Notartermin vereinbaren */}
-          <KernRow>
-            <KernColumn sizes={12}>
-              <KernHeading level={4}>Notartermin vereinbaren</KernHeading>
-              <KernText>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-              </KernText>
-              <KernRow>
-                <KernColumn sizes={12}>
-                  <KernButton text="Mehr lesen" onClick={() => {}} />
-                </KernColumn>
-              </KernRow>
-            </KernColumn>
-          </KernRow>
         </KernContainer>
       ),
     },
