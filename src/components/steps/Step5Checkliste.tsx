@@ -58,7 +58,15 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
     <>
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-          <KernHeading level={2}>Checkliste</KernHeading>
+          <KernText muted>
+            Fertig
+          </KernText>
+        </KernColumn>
+      </KernRow>
+
+      <KernRow>
+        <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
+          <KernHeading level={2}>Ihre Aufgabenliste für die Gründung</KernHeading>
         </KernColumn>
       </KernRow>
 
