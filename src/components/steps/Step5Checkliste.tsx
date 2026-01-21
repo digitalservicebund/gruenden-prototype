@@ -66,7 +66,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
   // GmbH accordion items
   const gmbhAccordionItems = [
     {
-      title: "Vorbereiten",
+      title: "Gründung vorbereiten",
       defaultOpen: true,
       body: (
         <KernContainer>
@@ -103,7 +103,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
       ),
     },
     {
-      title: "Gründen",
+      title: "Rechtliche Gründung",
       body: (
         <KernContainer>
           {/* Notariell gründen */}
@@ -359,16 +359,6 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
           <KernAccordion items={isGmbH ? gmbhAccordionItems : genericAccordionItems} />
-        </KernColumn>
-      </KernRow>
-
-      <KernRow>
-        <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-          <KernAlert
-            title="Hinweis"
-            variant="info"
-            body="Dies ist ein Prototyp. In einer echten Anwendung würden hier weitere Schritte und eine Übermittlung der Daten folgen."
-          />
         </KernColumn>
       </KernRow>
     </>

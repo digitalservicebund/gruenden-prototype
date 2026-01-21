@@ -24,6 +24,8 @@ import { Step5Checkliste } from "@/components/steps/Step5Checkliste";
 import { Topbar } from "@/components/Topbar";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { PrimaryButton } from "@/components/PrimaryButton";
+import { SecondaryButton } from "@/components/SecondaryButton";
 
 const TOTAL_STEPS = 5;
 
@@ -128,38 +130,29 @@ export default function Home() {
       </div>
 
       {/* Navigation buttons */}
-      <KernRow>
-        <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-          <KernRow justify="between">
-            <KernColumn sizes={6}>
-              {currentStep > 1 && (
-                <KernButton
-                  text="Zurück"
-                  variant="secondary"
-                  onClick={handleBack}
-                />
-              )}
-            </KernColumn>
-            <KernColumn sizes={6} align="end">
-              {currentStep < TOTAL_STEPS && (
-                <KernButton
+      {currentStep < TOTAL_STEPS && (
+        <KernRow>
+          <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
+            <KernRow justify="between">
+              <KernColumn sizes={6}>
+                {currentStep > 1 && (
+                  <SecondaryButton
+                    text="Zurück"
+                    onClick={handleBack}
+                  />
+                )}
+              </KernColumn>
+              <KernColumn sizes={6} align="end">
+                <PrimaryButton
                   text="Weiter"
-                  variant="primary"
                   onClick={handleNext}
                   disabled={!canProceed()}
                 />
-              )}
-              {currentStep === TOTAL_STEPS && (
-                <KernButton
-                  text="Absenden"
-                  variant="primary"
-                  onClick={() => alert("Formular abgesendet!")}
-                />
-              )}
-            </KernColumn>
-          </KernRow>
-        </KernColumn>
-      </KernRow>
+              </KernColumn>
+            </KernRow>
+          </KernColumn>
+        </KernRow>
+      )}
     </KernContainer>
     <Footer />
     </>
