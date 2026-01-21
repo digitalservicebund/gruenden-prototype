@@ -21,12 +21,11 @@ import { Step2Taetigkeit } from "@/components/steps/Step2Taetigkeit";
 import { Step3Nebentaetigkeit } from "@/components/steps/Step3Nebentaetigkeit";
 import { Step4Angestellte } from "@/components/steps/Step4Angestellte";
 import { Step5Checkliste } from "@/components/steps/Step5Checkliste";
-import { Step6Zusammenfassung } from "@/components/steps/Step6Zusammenfassung";
 import { Topbar } from "@/components/Topbar";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 
-const TOTAL_STEPS = 6;
+const TOTAL_STEPS = 5;
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -72,9 +71,6 @@ export default function Home() {
     }
     if (currentStep === 4) {
       return formData.hasEmployees !== "";
-    }
-    if (currentStep === 5) {
-      return true; // Checklist step - no validation needed
     }
     return true;
   };
@@ -124,14 +120,9 @@ export default function Home() {
         />
       </div>
 
-      {/* Step 5: Checkliste */}
+      {/* Step 5: Checkliste & Zusammenfassung */}
       <div style={{ display: currentStep === 5 ? "block" : "none" }}>
         <Step5Checkliste formData={formData} />
-      </div>
-
-      {/* Step 6: Zusammenfassung */}
-      <div style={{ display: currentStep === 6 ? "block" : "none" }}>
-        <Step6Zusammenfassung formData={formData} />
       </div>
 
       {/* Navigation buttons */}
