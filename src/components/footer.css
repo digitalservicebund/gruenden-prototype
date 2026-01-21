@@ -1,0 +1,27 @@
+.bmd-trustfooter {
+    padding: 2.5rem 0;
+    text-align: center;
+    width: 100%;
+    background-color: white;
+    vertical-align: center;
+
+    --bs-bgcolor-1: #E0F0F1;
+    --bs-primary: #00818B;
+    --bs-secondary: #00818B;
+}
+
+.bmd-trustfooter__wrapper {
+    align-items: flex-end;
+    display: inline-flex;
+    gap: 1.5rem;
+    vertical-align: center;
+}
+
+.bmd-trustfooter__text {
+    color: var(--kern-color-layout-text-muted, #404565);
+}
+
+.bmd-trustfooter .bmd-icon {
+    flex: 0 0 7.5rem;
+    height: auto;
+}

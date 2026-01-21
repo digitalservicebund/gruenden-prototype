@@ -23,6 +23,7 @@ import { Step4Angestellte } from "@/components/steps/Step4Angestellte";
 import { Step5Checkliste } from "@/components/steps/Step5Checkliste";
 import { Step6Zusammenfassung } from "@/components/steps/Step6Zusammenfassung";
 import { Topbar } from "@/components/Topbar";
+import { Footer } from "@/components/Footer";
 
 const TOTAL_STEPS = 6;
 
@@ -173,6 +174,7 @@ export default function Home() {
         </KernColumn>
       </KernRow>
     </KernContainer>
+    <Footer />
     </>
   );
 }
