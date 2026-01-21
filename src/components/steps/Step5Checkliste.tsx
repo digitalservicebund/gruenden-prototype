@@ -229,6 +229,21 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
       title: "Weitere Schritte",
       body: (
         <KernContainer>
+          {/* Eintrag ins Transparenzregister */}
+          <KernRow>
+            <KernColumn sizes={12}>
+              <KernHeading level={4}>Eintrag ins Transparenzregister</KernHeading>
+              <KernText>
+                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam est.
+              </KernText>
+              <KernRow>
+                <KernColumn sizes={12}>
+                  <SecondaryButton text="Mehr lesen" onClick={() => {}} icon="arrow-forward" iconPlacement="right" />
+                </KernColumn>
+              </KernRow>
+            </KernColumn>
+          </KernRow>
+
           {/* IHK Anmeldung */}
           <KernRow>
             <KernColumn sizes={12}>
