@@ -82,14 +82,6 @@ export default function Home() {
     <>
     <Topbar />
     <KernContainer>
-      
-      {/* Header */}
-      <KernRow>
-        <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-          <KernHeading level={1}>Unternehmen anmelden</KernHeading>
-        </KernColumn>
-      </KernRow>
-
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
           <KernText muted>
