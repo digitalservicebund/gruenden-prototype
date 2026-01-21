@@ -63,6 +63,7 @@ function SummaryText({ formData }: { formData: FormData }) {
 
 export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
   const isGmbH = formData.rechtsform === "gmbh";
+  const isEinzelunternehmen = formData.rechtsform === "einzelunternehmen";
 
   // GmbH accordion items
   const gmbhAccordionItems = [
@@ -262,6 +263,123 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
     },
   ];
 
+  // Einzelunternehmen accordion items
+  const einzelunternehmenAccordionItems = [
+    {
+      title: "Rechtliche Gründung",
+      defaultOpen: true,
+      body: (
+        <KernContainer>
+          {/* Unternehmen anmelden */}
+          <KernRow>
+            <KernColumn sizes={12}>
+              <KernHeading level={4}>Unternehmen anmelden</KernHeading>
+              <KernText>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </KernText>
+              <KernRow>
+                <KernColumn sizes={12}>
+                  <PrimaryButton text="Antrag starten" onClick={() => {}} />
+                </KernColumn>
+              </KernRow>
+            </KernColumn>
+          </KernRow>
+        </KernContainer>
+      ),
+    },
+    ...(formData.hasEmployees === "with"
+      ? [
+          {
+            title: "Mitarbeiter einstellen",
+            body: (
+              <KernContainer>
+                {/* Unvallversicherung bei Berufsgenossenschaft */}
+                <KernRow>
+                  <KernColumn sizes={12}>
+                    <KernHeading level={4}>Unvallversicherung bei Berufsgenossenschaft</KernHeading>
+                    <KernText>
+                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </KernText>
+                    <KernRow>
+                      <KernColumn sizes={12}>
+                        <SecondaryButton text="Mehr lesen" onClick={() => {}} icon="arrow-forward" iconPlacement="right" />
+                      </KernColumn>
+                    </KernRow>
+                  </KernColumn>
+                </KernRow>
+
+                {/* Betriebsnummer beantragen */}
+                <KernRow>
+                  <KernColumn sizes={12}>
+                    <KernHeading level={4}>Betriebsnummer beantragen</KernHeading>
+                    <KernText>
+                      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                    </KernText>
+                    <KernRow>
+                      <KernColumn sizes={12}>
+                        <SecondaryButton text="Mehr lesen" onClick={() => {}} icon="arrow-forward" iconPlacement="right" />
+                      </KernColumn>
+                    </KernRow>
+                  </KernColumn>
+                </KernRow>
+              </KernContainer>
+            ),
+          },
+        ]
+      : []),
+    {
+      title: "Weitere Schritte",
+      body: (
+        <KernContainer>
+          {/* Geschäftskonto */}
+          <KernRow>
+            <KernColumn sizes={12}>
+              <KernHeading level={4}>Geschäftskonto</KernHeading>
+              <KernText>
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+              </KernText>
+              <KernRow>
+                <KernColumn sizes={12}>
+                  <SecondaryButton text="Mehr lesen" onClick={() => {}} icon="arrow-forward" iconPlacement="right" />
+                </KernColumn>
+              </KernRow>
+            </KernColumn>
+          </KernRow>
+
+          {/* IHK Anmeldung */}
+          <KernRow>
+            <KernColumn sizes={12}>
+              <KernHeading level={4}>IHK Anmeldung</KernHeading>
+              <KernText>
+                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam est.
+              </KernText>
+              <KernRow>
+                <KernColumn sizes={12}>
+                  <SecondaryButton text="Mehr lesen" onClick={() => {}} icon="arrow-forward" iconPlacement="right" />
+                </KernColumn>
+              </KernRow>
+            </KernColumn>
+          </KernRow>
+
+          {/* Sozialversicherungspflicht prüfen */}
+          <KernRow>
+            <KernColumn sizes={12}>
+              <KernHeading level={4}>Sozialversicherungspflicht prüfen</KernHeading>
+              <KernText>
+                Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio nam libero tempore cum soluta nobis est eligendi optio.
+              </KernText>
+              <KernRow>
+                <KernColumn sizes={12}>
+                  <SecondaryButton text="Mehr lesen" onClick={() => {}} icon="arrow-forward" iconPlacement="right" />
+                </KernColumn>
+              </KernRow>
+            </KernColumn>
+          </KernRow>
+        </KernContainer>
+      ),
+    },
+  ];
+
   // Generic accordion items for non-GmbH
   const genericAccordionItems = [
     {
@@ -359,7 +477,15 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
 
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-          <KernAccordion items={isGmbH ? gmbhAccordionItems : genericAccordionItems} />
+          <KernAccordion
+            items={
+              isGmbH
+                ? gmbhAccordionItems
+                : isEinzelunternehmen
+                ? einzelunternehmenAccordionItems
+                : genericAccordionItems
+            }
+          />
         </KernColumn>
       </KernRow>
     </>
