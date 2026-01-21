@@ -43,10 +43,19 @@ const getHasEmployeesLabel = (value: HasEmployees) => {
   return hasEmployeesOptions.find((opt) => opt.value === value)?.label ?? "";
 };
 
+const getHasEmployeesTextForSummary = (value: HasEmployees) => {
+  const textMap: Record<HasEmployees, string> = {
+    with: "mit Angestellten",
+    without: "ohne Angestellte",
+    "": "",
+  };
+  return textMap[value] || "";
+};
+
 function SummaryText({ formData }: { formData: FormData }) {
   return (
     <KernText>
-      Sie möchten eine <strong>{getRechtsformLabel(formData.rechtsform)}</strong> gründen mit der Tätigkeit <strong>{getTaetigkeitLabel(formData.taetigkeit)}</strong>. Dies ist eine <strong>{getSideActivityLabel(formData.isSideActivity) === "Ja" ? "Nebentätigkeit" : "Haupttätigkeit"}</strong> und Sie planen <strong>{getHasEmployeesLabel(formData.hasEmployees).toLowerCase()}</strong>.
+      Sie möchten eine <strong>{getRechtsformLabel(formData.rechtsform)}</strong> gründen mit der Tätigkeit <strong>{getTaetigkeitLabel(formData.taetigkeit)}</strong>. Dies ist eine <strong>{getSideActivityLabel(formData.isSideActivity) === "Ja" ? "Nebentätigkeit" : "Haupttätigkeit"}</strong> und Sie planen <strong>{getHasEmployeesTextForSummary(formData.hasEmployees)}</strong>.
     </KernText>
   );
 }
