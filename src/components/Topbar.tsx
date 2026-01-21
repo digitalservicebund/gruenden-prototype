@@ -1,7 +1,7 @@
 export function Topbar() {
     return (
         <div className="kern-kopfzeile">
-<div className="kern-container-fluid">
+<div className="kern-container">
   <div className="kern-kopfzeile__content">
     <span className="kern-kopfzeile__flagge" aria-hidden="true">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 16">
