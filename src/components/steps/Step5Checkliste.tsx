@@ -43,6 +43,14 @@ const getHasEmployeesLabel = (value: HasEmployees) => {
   return hasEmployeesOptions.find((opt) => opt.value === value)?.label ?? "";
 };
 
+function SummaryText({ formData }: { formData: FormData }) {
+  return (
+    <KernText>
+      Sie möchten eine <strong>{getRechtsformLabel(formData.rechtsform)}</strong> gründen mit der Tätigkeit <strong>{getTaetigkeitLabel(formData.taetigkeit)}</strong>. Dies ist eine <strong>{getSideActivityLabel(formData.isSideActivity) === "Ja" ? "Nebentätigkeit" : "Haupttätigkeit"}</strong> und Sie planen <strong>{getHasEmployeesLabel(formData.hasEmployees).toLowerCase()}</strong>.
+    </KernText>
+  );
+}
+
 export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
   const isGmbH = formData.rechtsform === "gmbh";
 
@@ -51,6 +59,12 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
           <KernHeading level={2}>Checkliste</KernHeading>
+        </KernColumn>
+      </KernRow>
+
+      <KernRow>
+        <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
+          <SummaryText formData={formData} />
         </KernColumn>
       </KernRow>
 
@@ -353,56 +367,6 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
           </KernRow>
         </>
       )}
-
-      {/* Summary section */}
-      <KernContainer>
-        <KernRow>
-          <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-            <KernHeading level={2}>Zusammenfassung</KernHeading>
-          </KernColumn>
-        </KernRow>
-
-        <KernRow>
-          <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-            <KernText>
-              Bitte überprüfen Sie Ihre Angaben.
-            </KernText>
-          </KernColumn>
-        </KernRow>
-      </KernContainer>
-
-      <KernRow>
-        <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-          <CustomCard title="Ihre Angaben">
-            <KernContainer>
-              <KernRow>
-                <KernColumn sizes={12}>
-                  <KernText bold>Rechtsform:</KernText>
-                  <KernText>{getRechtsformLabel(formData.rechtsform)}</KernText>
-                </KernColumn>
-              </KernRow>
-              <KernRow>
-                <KernColumn sizes={12}>
-                  <KernText bold>Tätigkeit:</KernText>
-                  <KernText>{getTaetigkeitLabel(formData.taetigkeit)}</KernText>
-                </KernColumn>
-              </KernRow>
-              <KernRow>
-                <KernColumn sizes={12}>
-                  <KernText bold>Nebentätigkeit:</KernText>
-                  <KernText>{getSideActivityLabel(formData.isSideActivity)}</KernText>
-                </KernColumn>
-              </KernRow>
-              <KernRow>
-                <KernColumn sizes={12}>
-                  <KernText bold>Angestellte:</KernText>
-                  <KernText>{getHasEmployeesLabel(formData.hasEmployees)}</KernText>
-                </KernColumn>
-              </KernRow>
-            </KernContainer>
-          </CustomCard>
-        </KernColumn>
-      </KernRow>
 
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
