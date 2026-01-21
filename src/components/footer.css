@@ -2,7 +2,7 @@
     padding: 2.5rem 0;
     text-align: center;
     width: 100%;
-    background-color: white;
+    background-color: var(--kern-color-layout-background-hued, oklch(0.9746 0.0028 286.3));
     vertical-align: center;
 
     --bs-bgcolor-1: #E0F0F1;
