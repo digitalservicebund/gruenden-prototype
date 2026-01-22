@@ -31,7 +31,7 @@ export function Step7Kontakt() {
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 10, lg: 8 }}>
           <KernHeading level={2} size="large">
-            Kontakt
+            Kontaktdaten
           </KernHeading>
         </KernColumn>
       </KernRow>
@@ -43,11 +43,11 @@ export function Step7Kontakt() {
             Adresse
           </KernHeading>
 
-          {/* Persönliche Adresse with autocomplete */}
+          {/* Ihre Adresse with autocomplete */}
           <div className="mb-8">
             <KernCombobox
               id="persoenliche-adresse"
-              label="Persönliche Adresse"
+              label="Ihre Adresse"
               options={addressOptions}
               value={persoenlicheAdresse}
               onChange={setPersoenlicheAdresse}

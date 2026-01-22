@@ -19,7 +19,7 @@ export function Step6PersoenlicheDaten() {
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 10, lg: 8 }}>
           <KernHeading level={2} size="large">
-            Persönliche Daten
+            Ihre Daten
           </KernHeading>
         </KernColumn>
       </KernRow>

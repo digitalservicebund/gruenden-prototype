@@ -28,8 +28,8 @@ const STEPS = [
   { id: 3, title: "Geschätzter Umsatz" },
   { id: 4, title: "Geplannter Gewinn" },
   { id: 5, title: "Umsatzsteuer ID" },
-  { id: 6, title: "Persönliche Daten" },
-  { id: 7, title: "Kontakt" },
+  { id: 6, title: "Ihre Daten" },
+  { id: 7, title: "Kontaktdaten" },
   { id: 8, title: "Antrag absenden" },
 ];
 
