@@ -6,9 +6,9 @@ import {
   KernText,
   KernRow,
   KernColumn,
-  KernInput,
   KernRadioGroup,
 } from "@kern-ux-annex/kern-react-kit";
+import { JahresBetraege } from "./JahresBetraege";
 
 export function Step3GeschaetzterUmsatz() {
   const [umsatzDiesesJahr, setUmsatzDiesesJahr] = useState("");
@@ -35,26 +35,14 @@ export function Step3GeschaetzterUmsatz() {
             Tragen Sie hier Ihre geschätzten Einnahmen ein – also alles Geld, das Kunden für Ihre Leistungen zahlen, ohne Mehrwertsteuer. Eine ungefähre Schätzung Ihrer Umsätze genügt dabei völlig.
           </KernText>
 
-          <div className="mb-8">
-            <KernInput
-              id="umsatz-dieses-jahr"
-              label="Dieses Jahr (euro)"
-              type="number"
-              value={umsatzDiesesJahr}
-              onChange={(e) => setUmsatzDiesesJahr(e.target.value)}
-              onBlur={() => setHasBlurredUmsatz(true)}
-            />
-          </div>
-
-          <div className="mb-8">
-            <KernInput
-              id="umsatz-folgejahr"
-              label="Folgejahr (euro)"
-              type="number"
-              value={umsatzFolgejahr}
-              onChange={(e) => setUmsatzFolgejahr(e.target.value)}
-            />
-          </div>
+          <JahresBetraege
+            diesJahrValue={umsatzDiesesJahr}
+            folgejahrValue={umsatzFolgejahr}
+            onDiesJahrChange={setUmsatzDiesesJahr}
+            onFolgejahrChange={setUmsatzFolgejahr}
+            onDiesJahrBlur={() => setHasBlurredUmsatz(true)}
+            idPrefix="umsatz"
+          />
 
           {showKleinunternehmerregelung && (
             <div className="mb-8">
