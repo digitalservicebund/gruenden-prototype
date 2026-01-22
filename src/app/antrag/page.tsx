@@ -19,7 +19,8 @@ import { Step3GeschaetzterUmsatz } from "@/components/antrag-steps/Step3Geschaet
 import { Step4GeplannterGewinn } from "@/components/antrag-steps/Step4GeplannterGewinn";
 import { Step5UmsatzsteuerId } from "@/components/antrag-steps/Step5UmsatzsteuerId";
 import { Step6PersoenlicheDaten } from "@/components/antrag-steps/Step6PersoenlicheDaten";
-import { Step7AntragAbsenden } from "@/components/antrag-steps/Step7AntragAbsenden";
+import { Step7Kontakt } from "@/components/antrag-steps/Step7Kontakt";
+import { Step8AntragAbsenden } from "@/components/antrag-steps/Step8AntragAbsenden";
 
 const STEPS = [
   { id: 1, title: "Start der Antrag" },
@@ -27,8 +28,9 @@ const STEPS = [
   { id: 3, title: "Geschätzter Umsatz" },
   { id: 4, title: "Geplannter Gewinn" },
   { id: 5, title: "Umsatzsteuer ID" },
-  { id: 6, title: "Persönliche Daten und Adresse" },
-  { id: 7, title: "Antrag absenden" },
+  { id: 6, title: "Persönliche Daten" },
+  { id: 7, title: "Kontakt" },
+  { id: 8, title: "Antrag absenden" },
 ];
 
 const TOTAL_STEPS = STEPS.length;
@@ -120,7 +122,12 @@ export default function AntragPage() {
 
               {/* Step 7 */}
               <div style={{ display: currentStep === 7 ? "block" : "none" }}>
-                <Step7AntragAbsenden />
+                <Step7Kontakt />
+              </div>
+
+              {/* Step 8 */}
+              <div style={{ display: currentStep === 8 ? "block" : "none" }}>
+                <Step8AntragAbsenden />
               </div>
 
               {/* Navigation Buttons */}

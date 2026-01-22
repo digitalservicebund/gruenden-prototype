@@ -1,6 +1,6 @@
 import { KernHeading, KernText } from "@kern-ux-annex/kern-react-kit";
 
-export function Step7AntragAbsenden() {
+export function Step8AntragAbsenden() {
   return (
     <div>
       <KernHeading level={2} size="large">
