@@ -1,10 +1,10 @@
 import { KernHeading, KernText } from "@kern-ux-annex/kern-react-kit";
 
-export function Step4PersoenlicheDaten() {
+export function Step5UmsatzsteuerId() {
   return (
     <div>
       <KernHeading level={2} size="large">
-        Persönliche Daten und Adresse
+        Umsatzsteuer ID
       </KernHeading>
 
       <KernText>

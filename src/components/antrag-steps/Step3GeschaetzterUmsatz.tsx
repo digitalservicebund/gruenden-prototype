@@ -1,10 +1,10 @@
 import { KernHeading, KernText } from "@kern-ux-annex/kern-react-kit";
 
-export function Step3SteuerlicheErfassung() {
+export function Step3GeschaetzterUmsatz() {
   return (
     <div>
       <KernHeading level={2} size="large">
-        Steuerliche Erfassung
+        Geschätzter Umsatz
       </KernHeading>
 
       <KernText>
