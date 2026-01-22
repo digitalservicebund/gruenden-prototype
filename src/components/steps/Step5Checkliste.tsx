@@ -9,6 +9,7 @@ import {
 } from "@kern-ux-annex/kern-react-kit";
 import { PrimaryButton } from "@/components/PrimaryButton";
 import { SecondaryButton } from "@/components/SecondaryButton";
+import Link from "next/link";
 import {
   type FormData,
   type Rechtsform,
@@ -177,7 +178,9 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
-                  <PrimaryButton text="Antrag starten" onClick={() => {}} />
+                  <Link href="/antrag">
+                    <PrimaryButton text="Antrag starten" onClick={() => {}} />
+                  </Link>
                 </KernColumn>
               </KernRow>
             </KernColumn>
@@ -294,7 +297,9 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
-                  <PrimaryButton text="Antrag starten" onClick={() => {}} />
+                  <Link href="/antrag">
+                    <PrimaryButton text="Antrag starten" onClick={() => {}} />
+                  </Link>
                 </KernColumn>
               </KernRow>
             </KernColumn>
