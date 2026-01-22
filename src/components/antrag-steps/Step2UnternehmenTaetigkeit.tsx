@@ -76,25 +76,25 @@ export function Step2UnternehmenTaetigkeit() {
               <div className="kern-fieldset__body">
                 <KernCheckbox
                   id="industrie"
-                  label="Industrie"
+                  label="Industrie (Ich produziere Waren in großem Maßstab)"
                   checked={selectedCategories.includes("industrie")}
                   onChange={(e) => handleCheckboxChange("industrie", e.target.checked)}
                 />
                 <KernCheckbox
                   id="handel"
-                  label="Handel"
+                  label="Handel (Ich verkaufe Produkte weiter)"
                   checked={selectedCategories.includes("handel")}
                   onChange={(e) => handleCheckboxChange("handel", e.target.checked)}
                 />
                 <KernCheckbox
                   id="handwerk"
-                  label="Handwerk"
+                  label="Handwerk (Ich übe ein klassisches Handwerk aus)"
                   checked={selectedCategories.includes("handwerk")}
                   onChange={(e) => handleCheckboxChange("handwerk", e.target.checked)}
                 />
                 <KernCheckbox
                   id="sonstiges"
-                  label="Sonstiges"
+                  label="Sonstiges (Ich biete Wissen oder einen Service an)"
                   checked={selectedCategories.includes("sonstiges")}
                   onChange={(e) => handleCheckboxChange("sonstiges", e.target.checked)}
                 />
