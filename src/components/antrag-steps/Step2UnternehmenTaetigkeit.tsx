@@ -1,27 +1,134 @@
-import { KernHeading, KernText } from "@kern-ux-annex/kern-react-kit";
+"use client";
+
+import { useState } from "react";
+import {
+  KernHeading,
+  KernRow,
+  KernColumn,
+  KernRadioGroup,
+  KernInputDate,
+  KernInput,
+  KernCheckbox,
+} from "@kern-ux-annex/kern-react-kit";
+import {
+  type Ausfuehrung,
+  type TaetigkeitBegonnen,
+  ausfuehrungOptions,
+  taetigkeitBegonnenOptions,
+} from "@/app/types";
+import styles from "./Step2UnternehmenTaetigkeit.module.css";
 
 export function Step2UnternehmenTaetigkeit() {
+  const [taetigkeit, setTaetigkeit] = useState("TODO: Dieses Feld sollte vorab ausgefüllt sein");
+  const [ausfuehrung, setAusfuehrung] = useState<Ausfuehrung>("");
+  const [selectedCategories, setSelectedCategories] = useState<string[]>(["handel"]);
+  const [begonnen, setBegonnen] = useState<TaetigkeitBegonnen>("");
+  const [startdatum, setStartdatum] = useState("");
+
+  const handleCheckboxChange = (value: string, checked: boolean) => {
+    if (checked) {
+      setSelectedCategories((prev) => [...prev, value]);
+    } else {
+      setSelectedCategories((prev) => prev.filter((item) => item !== value));
+    }
+  };
+
   return (
     <div>
-      <KernHeading level={2} size="large">
-        Unternehmen und Tätigkeit
-      </KernHeading>
+      <KernRow>
+        <KernColumn sizes={{ xs: 12, md: 10, lg: 8 }}>
+          <KernHeading level={2} size="large">
+            Ihr Unternehmen und Ihre Tätigkeit
+          </KernHeading>
+        </KernColumn>
+      </KernRow>
 
-      <KernText>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </KernText>
+      <KernRow>
+        <KernColumn sizes={{ xs: 12, md: 10, lg: 8 }}>
+          {/* Welche Tätigkeit werden Sie ausüben? */}
+          <div className={styles.fieldWrapper}>
+            <KernInput
+              id="taetigkeit"
+              label="Welche Tätigkeit werden Sie ausüben?"
+              value={taetigkeit}
+              onChange={(e) => setTaetigkeit(e.target.value)}
+            />
+          </div>
 
-      <KernText>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </KernText>
+          {/* Die Tätigkeit wird ausgeführt */}
+          <div className={styles.fieldWrapper}>
+            <KernRadioGroup
+              name="ausfuehrung"
+              legend="Die Tätigkeit wird ausgeführt"
+              selected={ausfuehrung}
+              items={ausfuehrungOptions.map((opt) => ({
+                value: opt.value,
+                label: opt.label,
+              }))}
+              onChange={(value) => setAusfuehrung(value as Ausfuehrung)}
+            />
+          </div>
 
-      <KernText>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-      </KernText>
+          {/* In welchem Bereich fällt dein Unternehmen? */}
+          <div className={styles.fieldWrapper}>
+            <fieldset className="kern-fieldset">
+              <legend className="kern-label">In welchem Bereich fällt dein Unternehmen?</legend>
+              <div className="kern-fieldset__body">
+                <KernCheckbox
+                  id="industrie"
+                  label="Industrie"
+                  checked={selectedCategories.includes("industrie")}
+                  onChange={(e) => handleCheckboxChange("industrie", e.target.checked)}
+                />
+                <KernCheckbox
+                  id="handel"
+                  label="Handel"
+                  checked={selectedCategories.includes("handel")}
+                  onChange={(e) => handleCheckboxChange("handel", e.target.checked)}
+                />
+                <KernCheckbox
+                  id="handwerk"
+                  label="Handwerk"
+                  checked={selectedCategories.includes("handwerk")}
+                  onChange={(e) => handleCheckboxChange("handwerk", e.target.checked)}
+                />
+                <KernCheckbox
+                  id="sonstiges"
+                  label="Sonstiges"
+                  checked={selectedCategories.includes("sonstiges")}
+                  onChange={(e) => handleCheckboxChange("sonstiges", e.target.checked)}
+                />
+              </div>
+            </fieldset>
+          </div>
 
-      <KernText>
-        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
-      </KernText>
+          {/* Haben Sie die Tätigkeit bereits begonnen? */}
+          <div className={styles.fieldWrapper}>
+            <KernRadioGroup
+              name="begonnen"
+              legend="Haben Sie die Tätigkeit bereits begonnen?"
+              selected={begonnen}
+              items={taetigkeitBegonnenOptions.map((opt) => ({
+                value: opt.value,
+                label: opt.label,
+              }))}
+              onChange={(value) => setBegonnen(value as TaetigkeitBegonnen)}
+            />
+          </div>
+
+          {/* Conditional date input - shown only when "Ja" is selected */}
+          {begonnen === "ja" && (
+            <div className={styles.fieldWrapper}>
+              <KernInputDate
+                id="startdatum"
+                label="Wann haben Sie die Tätigkeit begonnen?"
+                value={startdatum}
+                onChange={(e) => setStartdatum(e.target.value)}
+              />
+            </div>
+          )}
+        </KernColumn>
+      </KernRow>
     </div>
   );
 }

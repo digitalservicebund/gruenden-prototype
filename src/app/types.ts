@@ -61,3 +61,35 @@ export const initialFormData: FormData = {
   isSideActivity: "",
   hasEmployees: "",
 };
+
+export interface BereichOption {
+  value: string;
+  label: string;
+}
+
+export const bereichOptions: BereichOption[] = [
+  { value: "handwerk", label: "Handwerk" },
+  { value: "dienstleistung", label: "Dienstleistung" },
+  { value: "handel", label: "Handel" },
+  { value: "gastronomie", label: "Gastronomie" },
+  { value: "it", label: "IT und Technologie" },
+  { value: "kreativ", label: "Kreativwirtschaft" },
+  { value: "beratung", label: "Beratung" },
+  { value: "gesundheit", label: "Gesundheitswesen" },
+  { value: "bildung", label: "Bildung" },
+  { value: "sonstiges", label: "Sonstiges" },
+];
+
+export type Ausfuehrung = "hauptberuflich" | "nebenberuflich" | "";
+
+export const ausfuehrungOptions = [
+  { value: "hauptberuflich", label: "Hauptberuflich" },
+  { value: "nebenberuflich", label: "Nebenberuflich" },
+];
+
+export type TaetigkeitBegonnen = "ja" | "nein" | "";
+
+export const taetigkeitBegonnenOptions = [
+  { value: "ja", label: "Ja" },
+  { value: "nein", label: "Nein" },
+];
