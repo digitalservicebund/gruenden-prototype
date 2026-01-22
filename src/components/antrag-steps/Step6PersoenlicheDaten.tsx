@@ -8,15 +8,22 @@ import {
   KernInput,
   KernInputDate,
 } from "@kern-ux-annex/kern-react-kit";
+import { KernCombobox, type ComboboxOption } from "@/components/KernCombobox";
+
+// Dummy address options for autocomplete
+const addressOptions: ComboboxOption[] = [
+  { value: "prinzessinnenstrasse-8-14", label: "Prinzessinnenstrasse 8-14, 10969 Berlin" },
+  { value: "alexanderplatz-1", label: "Alexanderplatz 1, 10178 Berlin" },
+  { value: "unter-den-linden-77", label: "Unter den Linden 77, 10117 Berlin" },
+  { value: "friedrichstrasse-50", label: "Friedrichstrasse 50, 10117 Berlin" },
+  { value: "kurfuerstendamm-26", label: "Kurfürstendamm 26, 10719 Berlin" },
+];
 
 export function Step6PersoenlicheDaten() {
   const [vorname, setVorname] = useState("");
   const [nachname, setNachname] = useState("");
   const [geburtsdatum, setGeburtsdatum] = useState("");
-  const [strasse, setStrasse] = useState("");
-  const [hausnummer, setHausnummer] = useState("");
-  const [plz, setPlz] = useState("");
-  const [ort, setOrt] = useState("");
+  const [adresse, setAdresse] = useState("");
   const [email, setEmail] = useState("");
   const [telefon, setTelefon] = useState("");
 
@@ -62,43 +69,15 @@ export function Step6PersoenlicheDaten() {
             />
           </div>
 
-          {/* Straße */}
+          {/* Adresse with autocomplete */}
           <div className="mb-8">
-            <KernInput
-              id="strasse"
-              label="Straße"
-              value={strasse}
-              onChange={(e) => setStrasse(e.target.value)}
-            />
-          </div>
-
-          {/* Hausnummer */}
-          <div className="mb-8">
-            <KernInput
-              id="hausnummer"
-              label="Hausnummer"
-              value={hausnummer}
-              onChange={(e) => setHausnummer(e.target.value)}
-            />
-          </div>
-
-          {/* PLZ */}
-          <div className="mb-8">
-            <KernInput
-              id="plz"
-              label="Postleitzahl"
-              value={plz}
-              onChange={(e) => setPlz(e.target.value)}
-            />
-          </div>
-
-          {/* Ort */}
-          <div className="mb-8">
-            <KernInput
-              id="ort"
-              label="Ort"
-              value={ort}
-              onChange={(e) => setOrt(e.target.value)}
+            <KernCombobox
+              id="adresse"
+              label="Adresse"
+              options={addressOptions}
+              value={adresse}
+              onChange={setAdresse}
+              placeholder="Beginnen Sie mit der Eingabe Ihrer Adresse..."
             />
           </div>
 
