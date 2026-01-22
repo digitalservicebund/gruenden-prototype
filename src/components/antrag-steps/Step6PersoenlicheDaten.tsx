@@ -1,27 +1,130 @@
-import { KernHeading, KernText } from "@kern-ux-annex/kern-react-kit";
+"use client";
+
+import { useState } from "react";
+import {
+  KernHeading,
+  KernRow,
+  KernColumn,
+  KernInput,
+  KernInputDate,
+} from "@kern-ux-annex/kern-react-kit";
 
 export function Step6PersoenlicheDaten() {
+  const [vorname, setVorname] = useState("");
+  const [nachname, setNachname] = useState("");
+  const [geburtsdatum, setGeburtsdatum] = useState("");
+  const [strasse, setStrasse] = useState("");
+  const [hausnummer, setHausnummer] = useState("");
+  const [plz, setPlz] = useState("");
+  const [ort, setOrt] = useState("");
+  const [email, setEmail] = useState("");
+  const [telefon, setTelefon] = useState("");
+
   return (
     <div>
-      <KernHeading level={2} size="large">
-        Persönliche Daten und Adresse
-      </KernHeading>
+      <KernRow>
+        <KernColumn sizes={{ xs: 12, md: 10, lg: 8 }}>
+          <KernHeading level={2} size="large">
+            Persönliche Daten und Adresse
+          </KernHeading>
+        </KernColumn>
+      </KernRow>
 
-      <KernText>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </KernText>
+      <KernRow>
+        <KernColumn sizes={{ xs: 12, md: 10, lg: 8 }}>
+          {/* Vorname */}
+          <div className="mb-8">
+            <KernInput
+              id="vorname"
+              label="Vorname"
+              value={vorname}
+              onChange={(e) => setVorname(e.target.value)}
+            />
+          </div>
 
-      <KernText>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </KernText>
+          {/* Nachname */}
+          <div className="mb-8">
+            <KernInput
+              id="nachname"
+              label="Nachname"
+              value={nachname}
+              onChange={(e) => setNachname(e.target.value)}
+            />
+          </div>
 
-      <KernText>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-      </KernText>
+          {/* Geburtsdatum */}
+          <div className="mb-8">
+            <KernInputDate
+              id="geburtsdatum"
+              label="Geburtsdatum"
+              value={geburtsdatum}
+              onChange={(e) => setGeburtsdatum(e.target.value)}
+            />
+          </div>
 
-      <KernText>
-        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
-      </KernText>
+          {/* Straße */}
+          <div className="mb-8">
+            <KernInput
+              id="strasse"
+              label="Straße"
+              value={strasse}
+              onChange={(e) => setStrasse(e.target.value)}
+            />
+          </div>
+
+          {/* Hausnummer */}
+          <div className="mb-8">
+            <KernInput
+              id="hausnummer"
+              label="Hausnummer"
+              value={hausnummer}
+              onChange={(e) => setHausnummer(e.target.value)}
+            />
+          </div>
+
+          {/* PLZ */}
+          <div className="mb-8">
+            <KernInput
+              id="plz"
+              label="Postleitzahl"
+              value={plz}
+              onChange={(e) => setPlz(e.target.value)}
+            />
+          </div>
+
+          {/* Ort */}
+          <div className="mb-8">
+            <KernInput
+              id="ort"
+              label="Ort"
+              value={ort}
+              onChange={(e) => setOrt(e.target.value)}
+            />
+          </div>
+
+          {/* Email */}
+          <div className="mb-8">
+            <KernInput
+              id="email"
+              label="E-Mail-Adresse"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+
+          {/* Telefon */}
+          <div className="mb-8">
+            <KernInput
+              id="telefon"
+              label="Telefonnummer"
+              type="tel"
+              value={telefon}
+              onChange={(e) => setTelefon(e.target.value)}
+            />
+          </div>
+        </KernColumn>
+      </KernRow>
     </div>
   );
 }
