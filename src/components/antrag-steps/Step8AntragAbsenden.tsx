@@ -1,27 +1,181 @@
-import { KernHeading, KernText } from "@kern-ux-annex/kern-react-kit";
+"use client";
+
+import {
+  KernHeading,
+  KernText,
+  KernRow,
+  KernColumn,
+} from "@kern-ux-annex/kern-react-kit";
+import { useFormData } from "@/contexts/FormContext";
+import { ausfuehrungOptions } from "@/app/types";
+
+// Helper component for displaying a data row
+function DataRow({ label, value }: { label: string; value: string | undefined }) {
+  if (!value) return null;
+
+  return (
+    <div style={{ marginBottom: "1rem", paddingBottom: "1rem", borderBottom: "1px solid #e0e0e0" }}>
+      <div style={{ fontWeight: "600", marginBottom: "0.25rem", color: "#333" }}>
+        {label}
+      </div>
+      <div style={{ color: "#666" }}>{value}</div>
+    </div>
+  );
+}
+
+// Helper component for section headings
+function SectionHeading({ title }: { title: string }) {
+  return (
+    <KernHeading level={3} size="medium" style={{ marginTop: "2rem", marginBottom: "1rem" }}>
+      {title}
+    </KernHeading>
+  );
+}
 
 export function Step8AntragAbsenden() {
+  const { formData } = useFormData();
+
+  // Helper functions to get display labels
+  const getAusfuehrungLabel = () => {
+    const option = ausfuehrungOptions.find((opt) => opt.value === formData.ausfuehrung);
+    return option?.label || formData.ausfuehrung;
+  };
+
+  const getCategoriesLabel = () => {
+    const categoryLabels: { [key: string]: string } = {
+      industrie: "Industrie",
+      handel: "Handel",
+      handwerk: "Handwerk",
+      sonstiges: "Sonstiges",
+    };
+    return formData.selectedCategories
+      .map((cat) => categoryLabels[cat] || cat)
+      .join(", ");
+  };
+
+  const formatCurrency = (value: string) => {
+    if (!value) return "";
+    const number = parseFloat(value);
+    return new Intl.NumberFormat("de-DE", {
+      style: "currency",
+      currency: "EUR",
+    }).format(number);
+  };
+
+  const getWeitereGewinneLabel = (key: string) => {
+    const labels: { [key: string]: string } = {
+      "selbstaendige-arbeit": "Aus selbständiger Arbeit",
+      "nichtselbstaendige-arbeit": "Aus nichtselbständiger Arbeit",
+      "vermietung-verpachtung": "Aus Vermietung und Verpachtung",
+      "sonstige-einkuenfte": "Aus sonstigen Einkünften",
+      "sonderausgaben": "Sonderausgaben",
+      "steuerabzugsbetrage": "Steuerabzugsbeträge",
+    };
+    return labels[key] || key;
+  };
+
   return (
     <div>
-      <KernHeading level={2} size="large">
-        Antrag absenden
-      </KernHeading>
+      <KernRow>
+        <KernColumn sizes={{ xs: 12, md: 10, lg: 8 }}>
+          <KernHeading level={2} size="large">
+            Überprüfen und absenden
+          </KernHeading>
 
-      <KernText>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </KernText>
+          <KernText>
+            Bitte überprüfen Sie Ihre Angaben sorgfältig, bevor Sie den Antrag einreichen.
+          </KernText>
 
-      <KernText>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </KernText>
+          {/* Unternehmen und Tätigkeit */}
+          <SectionHeading title="Unternehmen und Tätigkeit" />
+          <DataRow label="Tätigkeit" value={formData.taetigkeit} />
+          <DataRow label="Ausführung" value={getAusfuehrungLabel()} />
+          <DataRow label="Unternehmensbereiche" value={getCategoriesLabel()} />
+          <DataRow
+            label="Tätigkeit bereits begonnen"
+            value={formData.begonnen === "ja" ? "Ja" : formData.begonnen === "nein" ? "Nein" : ""}
+          />
+          {formData.begonnen === "ja" && (
+            <DataRow label="Startdatum" value={formData.startdatum} />
+          )}
 
-      <KernText>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-      </KernText>
+          {/* Geschätzter Umsatz */}
+          <SectionHeading title="Geschätzter Umsatz" />
+          <DataRow
+            label="Umsatz dieses Jahr"
+            value={formData.umsatzDiesesJahr ? formatCurrency(formData.umsatzDiesesJahr) : ""}
+          />
+          <DataRow
+            label="Umsatz Folgejahr"
+            value={formData.umsatzFolgejahr ? formatCurrency(formData.umsatzFolgejahr) : ""}
+          />
+          {formData.kleinunternehmerregelung && (
+            <DataRow
+              label="Kleinunternehmerregelung"
+              value={formData.kleinunternehmerregelung === "ja" ? "Ja" : "Nein"}
+            />
+          )}
 
-      <KernText>
-        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
-      </KernText>
+          {/* Geplannter Gewinn */}
+          <SectionHeading title="Geplannter Gewinn" />
+          <DataRow
+            label="Betriebsgewinn dieses Jahr"
+            value={formData.gewinnDiesesJahr ? formatCurrency(formData.gewinnDiesesJahr) : ""}
+          />
+          <DataRow
+            label="Betriebsgewinn Folgejahr"
+            value={formData.gewinnFolgejahr ? formatCurrency(formData.gewinnFolgejahr) : ""}
+          />
+
+          {formData.weitereGewinne.length > 0 && (
+            <>
+              <div style={{ marginTop: "1rem", fontWeight: "600", color: "#333" }}>
+                Weitere Gewinne:
+              </div>
+              {formData.weitereGewinne.map((key) => (
+                <div key={key} style={{ marginLeft: "1rem", marginTop: "0.5rem" }}>
+                  <div style={{ fontWeight: "500", color: "#555" }}>
+                    {getWeitereGewinneLabel(key)}
+                  </div>
+                  <div style={{ marginLeft: "1rem", color: "#666" }}>
+                    <div>
+                      Dieses Jahr: {formatCurrency(formData.weitereGewinneValues[key]?.diesJahr || "")}
+                    </div>
+                    <div>
+                      Folgejahr: {formatCurrency(formData.weitereGewinneValues[key]?.folgejahr || "")}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </>
+          )}
+
+          {/* Umsatzsteuer ID */}
+          <SectionHeading title="Umsatzsteuer-Identifikationsnummer" />
+          <DataRow
+            label="Umsatzsteuer-ID beantragen"
+            value={formData.umsatzsteuerId === "ja" ? "Ja" : formData.umsatzsteuerId === "nein" ? "Nein" : ""}
+          />
+
+          {/* Persönliche Daten */}
+          <SectionHeading title="Persönliche Daten" />
+          <DataRow label="Vorname" value={formData.vorname} />
+          <DataRow label="Nachname" value={formData.nachname} />
+          <DataRow label="Geburtsdatum" value={formData.geburtsdatum} />
+
+          {/* Kontaktdaten */}
+          <SectionHeading title="Kontaktdaten" />
+          <DataRow label="Persönliche Adresse" value={formData.persoenlicheAdresse} />
+          {!formData.adresseGleich && (
+            <DataRow label="Firmenadresse" value={formData.firmenAdresse} />
+          )}
+          {formData.adresseGleich && (
+            <DataRow label="Firmenadresse" value="Gleich wie persönliche Adresse" />
+          )}
+          <DataRow label="E-Mail-Adresse" value={formData.email} />
+          <DataRow label="Telefonnummer" value={formData.telefon} />
+        </KernColumn>
+      </KernRow>
     </div>
   );
 }

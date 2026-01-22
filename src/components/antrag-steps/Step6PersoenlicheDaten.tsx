@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import {
   KernHeading,
   KernRow,
@@ -8,11 +7,10 @@ import {
   KernInput,
   KernInputDate,
 } from "@kern-ux-annex/kern-react-kit";
+import { useFormData } from "@/contexts/FormContext";
 
 export function Step6PersoenlicheDaten() {
-  const [vorname, setVorname] = useState("");
-  const [nachname, setNachname] = useState("");
-  const [geburtsdatum, setGeburtsdatum] = useState("");
+  const { formData, updateFormData } = useFormData();
 
   return (
     <div>
@@ -31,8 +29,8 @@ export function Step6PersoenlicheDaten() {
             <KernInput
               id="vorname"
               label="Vorname"
-              value={vorname}
-              onChange={(e) => setVorname(e.target.value)}
+              value={formData.vorname}
+              onChange={(e) => updateFormData({ vorname: e.target.value })}
             />
           </div>
 
@@ -41,8 +39,8 @@ export function Step6PersoenlicheDaten() {
             <KernInput
               id="nachname"
               label="Nachname"
-              value={nachname}
-              onChange={(e) => setNachname(e.target.value)}
+              value={formData.nachname}
+              onChange={(e) => updateFormData({ nachname: e.target.value })}
             />
           </div>
 
@@ -51,8 +49,8 @@ export function Step6PersoenlicheDaten() {
             <KernInputDate
               id="geburtsdatum"
               label="Geburtsdatum"
-              value={geburtsdatum}
-              onChange={(e) => setGeburtsdatum(e.target.value)}
+              value={formData.geburtsdatum}
+              onChange={(e) => updateFormData({ geburtsdatum: e.target.value })}
               required
             />
           </div>

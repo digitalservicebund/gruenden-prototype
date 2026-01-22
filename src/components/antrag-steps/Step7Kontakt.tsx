@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import {
   KernHeading,
   KernRow,
@@ -9,6 +8,7 @@ import {
   KernCheckbox,
 } from "@kern-ux-annex/kern-react-kit";
 import { KernCombobox, type ComboboxOption } from "@/components/KernCombobox";
+import { useFormData } from "@/contexts/FormContext";
 
 // Dummy address options for autocomplete
 const addressOptions: ComboboxOption[] = [
@@ -20,11 +20,7 @@ const addressOptions: ComboboxOption[] = [
 ];
 
 export function Step7Kontakt() {
-  const [persoenlicheAdresse, setPersoenlicheAdresse] = useState("");
-  const [adresseGleich, setAdresseGleich] = useState(true);
-  const [firmenAdresse, setFirmenAdresse] = useState("");
-  const [email, setEmail] = useState("");
-  const [telefon, setTelefon] = useState("");
+  const { formData, updateFormData } = useFormData();
 
   return (
     <div>
@@ -49,8 +45,8 @@ export function Step7Kontakt() {
               id="persoenliche-adresse"
               label="Ihre Adresse"
               options={addressOptions}
-              value={persoenlicheAdresse}
-              onChange={setPersoenlicheAdresse}
+              value={formData.persoenlicheAdresse}
+              onChange={(value) => updateFormData({ persoenlicheAdresse: value })}
               placeholder="Beginnen Sie mit der Eingabe Ihrer Adresse..."
             />
           </div>
@@ -60,20 +56,20 @@ export function Step7Kontakt() {
             <KernCheckbox
               id="adresse-gleich"
               label="Firmenadresse ist gleich wie persönliche Adresse"
-              checked={adresseGleich}
-              onChange={(e) => setAdresseGleich(e.target.checked)}
+              checked={formData.adresseGleich}
+              onChange={(e) => updateFormData({ adresseGleich: e.target.checked })}
             />
           </div>
 
           {/* Firmenadresse - nur anzeigen wenn nicht gleich */}
-          {!adresseGleich && (
+          {!formData.adresseGleich && (
             <div className="mb-8">
               <KernCombobox
                 id="firmen-adresse"
                 label="Firmenadresse"
                 options={addressOptions}
-                value={firmenAdresse}
-                onChange={setFirmenAdresse}
+                value={formData.firmenAdresse}
+                onChange={(value) => updateFormData({ firmenAdresse: value })}
                 placeholder="Beginnen Sie mit der Eingabe der Firmenadresse..."
               />
             </div>
@@ -90,8 +86,8 @@ export function Step7Kontakt() {
               id="email"
               label="E-Mail-Adresse"
               type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={formData.email}
+              onChange={(e) => updateFormData({ email: e.target.value })}
             />
           </div>
 
@@ -101,8 +97,8 @@ export function Step7Kontakt() {
               id="telefon"
               label="Telefonnummer"
               type="tel"
-              value={telefon}
-              onChange={(e) => setTelefon(e.target.value)}
+              value={formData.telefon}
+              onChange={(e) => updateFormData({ telefon: e.target.value })}
             />
           </div>
         </KernColumn>

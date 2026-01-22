@@ -21,6 +21,7 @@ import { Step5UmsatzsteuerId } from "@/components/antrag-steps/Step5Umsatzsteuer
 import { Step6PersoenlicheDaten } from "@/components/antrag-steps/Step6PersoenlicheDaten";
 import { Step7Kontakt } from "@/components/antrag-steps/Step7Kontakt";
 import { Step8AntragAbsenden } from "@/components/antrag-steps/Step8AntragAbsenden";
+import { FormProvider } from "@/contexts/FormContext";
 
 const STEPS = [
   { id: 1, title: "Start der Antrag" },
@@ -64,7 +65,7 @@ export default function AntragPage() {
   };
 
   return (
-    <>
+    <FormProvider>
       <Topbar />
       <Header />
       <KernContainer>
@@ -154,6 +155,6 @@ export default function AntragPage() {
         </KernRow>
       </KernContainer>
       <Footer />
-    </>
+    </FormProvider>
   );
 }

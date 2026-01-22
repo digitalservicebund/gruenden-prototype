@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import {
   KernHeading,
   KernText,
@@ -8,9 +7,10 @@ import {
   KernColumn,
   KernRadioGroup,
 } from "@kern-ux-annex/kern-react-kit";
+import { useFormData } from "@/contexts/FormContext";
 
 export function Step5UmsatzsteuerId() {
-  const [umsatzsteuerId, setUmsatzsteuerId] = useState("");
+  const { formData, updateFormData } = useFormData();
 
   return (
     <div>
@@ -30,12 +30,12 @@ export function Step5UmsatzsteuerId() {
 
           <KernRadioGroup
             name="umsatzsteuerId"
-            selected={umsatzsteuerId}
+            selected={formData.umsatzsteuerId}
             items={[
               { value: "ja", label: "Ja" },
               { value: "nein", label: "Nein" },
             ]}
-            onChange={(value) => setUmsatzsteuerId(value)}
+            onChange={(value) => updateFormData({ umsatzsteuerId: value })}
           />
         </KernColumn>
       </KernRow>

@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import {
   KernHeading,
   KernRow,
@@ -17,20 +16,16 @@ import {
   ausfuehrungOptions,
   taetigkeitBegonnenOptions,
 } from "@/app/types";
+import { useFormData } from "@/contexts/FormContext";
 
 export function Step2UnternehmenTaetigkeit() {
-  const [taetigkeit, setTaetigkeit] = useState("TODO: Dieses Feld sollte vorab ausgefüllt sein");
-  const [ausfuehrung, setAusfuehrung] = useState<Ausfuehrung>("");
-  const [selectedCategories, setSelectedCategories] = useState<string[]>(["handel"]);
-  const [begonnen, setBegonnen] = useState<TaetigkeitBegonnen>("");
-  const [startdatum, setStartdatum] = useState("");
+  const { formData, updateFormData } = useFormData();
 
   const handleCheckboxChange = (value: string, checked: boolean) => {
-    if (checked) {
-      setSelectedCategories((prev) => [...prev, value]);
-    } else {
-      setSelectedCategories((prev) => prev.filter((item) => item !== value));
-    }
+    const newCategories = checked
+      ? [...formData.selectedCategories, value]
+      : formData.selectedCategories.filter((item) => item !== value);
+    updateFormData({ selectedCategories: newCategories });
   };
 
   return (
@@ -50,8 +45,8 @@ export function Step2UnternehmenTaetigkeit() {
             <KernInput
               id="taetigkeit"
               label="Welche Tätigkeit werden Sie ausüben?"
-              value={taetigkeit}
-              onChange={(e) => setTaetigkeit(e.target.value)}
+              value={formData.taetigkeit}
+              onChange={(e) => updateFormData({ taetigkeit: e.target.value })}
             />
           </div>
 
@@ -60,12 +55,12 @@ export function Step2UnternehmenTaetigkeit() {
             <KernRadioGroup
               name="ausfuehrung"
               legend="Die Tätigkeit wird ausgeführt"
-              selected={ausfuehrung}
+              selected={formData.ausfuehrung}
               items={ausfuehrungOptions.map((opt) => ({
                 value: opt.value,
                 label: opt.label,
               }))}
-              onChange={(value) => setAusfuehrung(value as Ausfuehrung)}
+              onChange={(value) => updateFormData({ ausfuehrung: value as Ausfuehrung })}
             />
           </div>
 
@@ -75,25 +70,25 @@ export function Step2UnternehmenTaetigkeit() {
               <KernCheckbox
                 id="industrie"
                 label="Industrie (Ich produziere Waren in großem Maßstab)"
-                checked={selectedCategories.includes("industrie")}
+                checked={formData.selectedCategories.includes("industrie")}
                 onChange={(e) => handleCheckboxChange("industrie", e.target.checked)}
               />
               <KernCheckbox
                 id="handel"
                 label="Handel (Ich verkaufe Produkte weiter)"
-                checked={selectedCategories.includes("handel")}
+                checked={formData.selectedCategories.includes("handel")}
                 onChange={(e) => handleCheckboxChange("handel", e.target.checked)}
               />
               <KernCheckbox
                 id="handwerk"
                 label="Handwerk (Ich übe ein klassisches Handwerk aus)"
-                checked={selectedCategories.includes("handwerk")}
+                checked={formData.selectedCategories.includes("handwerk")}
                 onChange={(e) => handleCheckboxChange("handwerk", e.target.checked)}
               />
               <KernCheckbox
                 id="sonstiges"
                 label="Sonstiges (Ich biete Wissen oder einen Service an)"
-                checked={selectedCategories.includes("sonstiges")}
+                checked={formData.selectedCategories.includes("sonstiges")}
                 onChange={(e) => handleCheckboxChange("sonstiges", e.target.checked)}
               />
             </KernFieldset>
@@ -104,23 +99,23 @@ export function Step2UnternehmenTaetigkeit() {
             <KernRadioGroup
               name="begonnen"
               legend="Haben Sie die Tätigkeit bereits begonnen?"
-              selected={begonnen}
+              selected={formData.begonnen}
               items={taetigkeitBegonnenOptions.map((opt) => ({
                 value: opt.value,
                 label: opt.label,
               }))}
-              onChange={(value) => setBegonnen(value as TaetigkeitBegonnen)}
+              onChange={(value) => updateFormData({ begonnen: value as TaetigkeitBegonnen })}
             />
           </div>
 
           {/* Conditional date input - shown only when "Ja" is selected */}
-          {begonnen === "ja" && (
+          {formData.begonnen === "ja" && (
             <div className="mb-8">
               <KernInputDate
                 id="startdatum"
                 label="Wann haben Sie die Tätigkeit begonnen?"
-                value={startdatum}
-                onChange={(e) => setStartdatum(e.target.value)}
+                value={formData.startdatum}
+                onChange={(e) => updateFormData({ startdatum: e.target.value })}
               />
             </div>
           )}

@@ -9,15 +9,14 @@ import {
   KernRadioGroup,
 } from "@kern-ux-annex/kern-react-kit";
 import { JahresBetraege } from "./JahresBetraege";
+import { useFormData } from "@/contexts/FormContext";
 
 export function Step3GeschaetzterUmsatz() {
-  const [umsatzDiesesJahr, setUmsatzDiesesJahr] = useState("");
-  const [umsatzFolgejahr, setUmsatzFolgejahr] = useState("");
-  const [kleinunternehmerregelung, setKleinunternehmerregelung] = useState("");
+  const { formData, updateFormData } = useFormData();
   const [hasBlurredUmsatz, setHasBlurredUmsatz] = useState(false);
 
   const showKleinunternehmerregelung =
-    hasBlurredUmsatz && umsatzDiesesJahr !== "" && Number(umsatzDiesesJahr) < 25000;
+    hasBlurredUmsatz && formData.umsatzDiesesJahr !== "" && Number(formData.umsatzDiesesJahr) < 25000;
 
   return (
     <div>
@@ -36,10 +35,10 @@ export function Step3GeschaetzterUmsatz() {
           </KernText>
 
           <JahresBetraege
-            diesJahrValue={umsatzDiesesJahr}
-            folgejahrValue={umsatzFolgejahr}
-            onDiesJahrChange={setUmsatzDiesesJahr}
-            onFolgejahrChange={setUmsatzFolgejahr}
+            diesJahrValue={formData.umsatzDiesesJahr}
+            folgejahrValue={formData.umsatzFolgejahr}
+            onDiesJahrChange={(value) => updateFormData({ umsatzDiesesJahr: value })}
+            onFolgejahrChange={(value) => updateFormData({ umsatzFolgejahr: value })}
             onDiesJahrBlur={() => setHasBlurredUmsatz(true)}
             idPrefix="umsatz"
           />
@@ -62,12 +61,12 @@ export function Step3GeschaetzterUmsatz() {
               <KernRadioGroup
                 name="kleinunternehmerregelung"
                 legend=""
-                selected={kleinunternehmerregelung}
+                selected={formData.kleinunternehmerregelung}
                 items={[
                   { value: "ja", label: "Ja" },
                   { value: "nein", label: "Nein" },
                 ]}
-                onChange={(value) => setKleinunternehmerregelung(value)}
+                onChange={(value) => updateFormData({ kleinunternehmerregelung: value })}
               />
             </div>
           )}
