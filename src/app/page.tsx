@@ -1,160 +1,51 @@
 "use client";
 
-import { useState } from "react";
 import {
-  KernButton,
-  KernHeading,
-  KernText,
   KernContainer,
   KernRow,
   KernColumn,
+  KernHeading,
+  KernText,
 } from "@kern-ux-annex/kern-react-kit";
-import {
-  type FormData,
-  type Rechtsform,
-  type SideActivity,
-  type HasEmployees,
-  initialFormData,
-} from "./types";
-import { Step1Rechtsform } from "@/components/steps/Step1Rechtsform";
-import { Step2Taetigkeit } from "@/components/steps/Step2Taetigkeit";
-import { Step3Nebentaetigkeit } from "@/components/steps/Step3Nebentaetigkeit";
-import { Step4Angestellte } from "@/components/steps/Step4Angestellte";
-import { Step5Checkliste } from "@/components/steps/Step5Checkliste";
 import { Topbar } from "@/components/Topbar";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { PrimaryButton } from "@/components/PrimaryButton";
-import { SecondaryButton } from "@/components/SecondaryButton";
-
-const TOTAL_STEPS = 5;
+import Link from "next/link";
 
 export default function Home() {
-  const [currentStep, setCurrentStep] = useState(1);
-  const [formData, setFormData] = useState<FormData>(initialFormData);
-
-  const handleRechtsformChange = (value: string) => {
-    setFormData((prev) => ({ ...prev, rechtsform: value as Rechtsform | "" }));
-  };
-
-  const handleNext = () => {
-    if (currentStep < TOTAL_STEPS) {
-      setCurrentStep((prev) => prev + 1);
-    }
-  };
-
-  const handleBack = () => {
-    if (currentStep > 1) {
-      setCurrentStep((prev) => prev - 1);
-    }
-  };
-
-  const handleTaetigkeitChange = (value: string) => {
-    setFormData((prev) => ({ ...prev, taetigkeit: value }));
-  };
-
-  const handleSideActivityChange = (value: string) => {
-    setFormData((prev) => ({ ...prev, isSideActivity: value as SideActivity | "" }));
-  };
-
-  const handleHasEmployeesChange = (value: string) => {
-    setFormData((prev) => ({ ...prev, hasEmployees: value as HasEmployees | "" }));
-  };
-
-  const canProceed = () => {
-    if (currentStep === 1) {
-      return formData.rechtsform !== "";
-    }
-    if (currentStep === 2) {
-      return formData.taetigkeit !== "";
-    }
-    if (currentStep === 3) {
-      return formData.isSideActivity !== "";
-    }
-    if (currentStep === 4) {
-      return formData.hasEmployees !== "";
-    }
-    return true;
-  };
-
   return (
     <>
-    <Topbar />
-    <Header />
-    <KernContainer>
-      {/*
-      <KernRow>
-        <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-          <KernText muted>
-            Schritt {currentStep} von {TOTAL_STEPS}
-          </KernText>
-        </KernColumn>
-      </KernRow>
-      */}
+      <Topbar />
+      <Header />
+      <KernContainer>
+        <KernRow>
+          <KernColumn sizes={{ xs: 12, md: 10, lg: 8 }}>
+            <KernHeading level={1} size="x-large">
+              Gründungsassistent für Deutschland
+            </KernHeading>
 
-      {/* Step 1: Rechtsform */}
-      <div style={{ display: currentStep === 1 ? "block" : "none" }}>
-        <Step1Rechtsform
-          formData={formData}
-          onRechtsformChange={handleRechtsformChange}
-        />
-      </div>
+            <KernText>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </KernText>
 
-      {/* Step 2: Tätigkeit */}
-      <div style={{ display: currentStep === 2 ? "block" : "none" }}>
-        <Step2Taetigkeit
-          formData={formData}
-          onTaetigkeitChange={handleTaetigkeitChange}
-        />
-      </div>
+            <KernText>
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </KernText>
 
-      {/* Step 3: Nebentätigkeit */}
-      <div style={{ display: currentStep === 3 ? "block" : "none" }}>
-        <Step3Nebentaetigkeit
-          formData={formData}
-          onSideActivityChange={handleSideActivityChange}
-        />
-      </div>
+            <KernText>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+            </KernText>
 
-      {/* Step 4: Angestellte */}
-      <div style={{ display: currentStep === 4 ? "block" : "none" }}>
-        <Step4Angestellte
-          formData={formData}
-          onHasEmployeesChange={handleHasEmployeesChange}
-        />
-      </div>
-
-      {/* Step 5: Checkliste & Zusammenfassung */}
-      <div style={{ display: currentStep === 5 ? "block" : "none" }}>
-        <Step5Checkliste formData={formData} />
-      </div>
-
-      {/* Navigation buttons */}
-      <KernRow>
-        <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-          <KernRow justify="between">
-            <KernColumn sizes={6}>
-              {currentStep > 1 && (
-                <SecondaryButton
-                  text="Zurück"
-                  onClick={handleBack}
-                />
-              )}
-            </KernColumn>
-            <KernColumn sizes={6} align="end">
-              {currentStep < TOTAL_STEPS && (
-                <PrimaryButton
-                  text="Weiter"
-                  onClick={handleNext}
-                  disabled={!canProceed()}
-                />
-              )}
-            </KernColumn>
-          </KernRow>
-        </KernColumn>
-      </KernRow>
-    </KernContainer>
-    <Footer />
+            <div style={{ marginTop: "2rem" }}>
+              <Link href="/application">
+                <PrimaryButton text="Zur Anwendung" onClick={() => {}} />
+              </Link>
+            </div>
+          </KernColumn>
+        </KernRow>
+      </KernContainer>
+      <Footer />
     </>
   );
 }
