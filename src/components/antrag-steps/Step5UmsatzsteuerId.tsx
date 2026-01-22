@@ -1,27 +1,44 @@
-import { KernHeading, KernText } from "@kern-ux-annex/kern-react-kit";
+"use client";
+
+import { useState } from "react";
+import {
+  KernHeading,
+  KernText,
+  KernRow,
+  KernColumn,
+  KernRadioGroup,
+} from "@kern-ux-annex/kern-react-kit";
 
 export function Step5UmsatzsteuerId() {
+  const [umsatzsteuerId, setUmsatzsteuerId] = useState("");
+
   return (
     <div>
-      <KernHeading level={2} size="large">
-        Umsatzsteuer ID
-      </KernHeading>
+      <KernRow>
+        <KernColumn sizes={{ xs: 12, md: 10, lg: 8 }}>
+          <KernHeading level={2} size="large">
+            Wollen Sie Umsatzsteuer-Identifikationsnummer beantragen?
+          </KernHeading>
+        </KernColumn>
+      </KernRow>
 
-      <KernText>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </KernText>
+      <KernRow>
+        <KernColumn sizes={{ xs: 12, md: 10, lg: 8 }}>
+          <KernText>
+            Sobald Sie Leistungen oder Waren an Unternehmen in anderen EU-Ländern verkaufen, benötigen Sie eine Umsatzsteuer-Identifikationsnummer (USt-IdNr.).
+          </KernText>
 
-      <KernText>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </KernText>
-
-      <KernText>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-      </KernText>
-
-      <KernText>
-        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
-      </KernText>
+          <KernRadioGroup
+            name="umsatzsteuerId"
+            selected={umsatzsteuerId}
+            items={[
+              { value: "ja", label: "Ja" },
+              { value: "nein", label: "Nein" },
+            ]}
+            onChange={(value) => setUmsatzsteuerId(value)}
+          />
+        </KernColumn>
+      </KernRow>
     </div>
   );
 }
