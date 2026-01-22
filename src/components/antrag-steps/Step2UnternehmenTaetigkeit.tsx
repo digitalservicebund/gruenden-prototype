@@ -9,6 +9,7 @@ import {
   KernInputDate,
   KernInput,
   KernCheckbox,
+  KernFieldset,
 } from "@kern-ux-annex/kern-react-kit";
 import {
   type Ausfuehrung,
@@ -16,7 +17,6 @@ import {
   ausfuehrungOptions,
   taetigkeitBegonnenOptions,
 } from "@/app/types";
-import styles from "./Step2UnternehmenTaetigkeit.module.css";
 
 export function Step2UnternehmenTaetigkeit() {
   const [taetigkeit, setTaetigkeit] = useState("TODO: Dieses Feld sollte vorab ausgefüllt sein");
@@ -46,7 +46,7 @@ export function Step2UnternehmenTaetigkeit() {
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 10, lg: 8 }}>
           {/* Welche Tätigkeit werden Sie ausüben? */}
-          <div className={styles.fieldWrapper}>
+          <div className="mb-8">
             <KernInput
               id="taetigkeit"
               label="Welche Tätigkeit werden Sie ausüben?"
@@ -56,7 +56,7 @@ export function Step2UnternehmenTaetigkeit() {
           </div>
 
           {/* Die Tätigkeit wird ausgeführt */}
-          <div className={styles.fieldWrapper}>
+          <div className="mb-8">
             <KernRadioGroup
               name="ausfuehrung"
               legend="Die Tätigkeit wird ausgeführt"
@@ -70,40 +70,37 @@ export function Step2UnternehmenTaetigkeit() {
           </div>
 
           {/* In welchem Bereich fällt dein Unternehmen? */}
-          <div className={styles.fieldWrapper}>
-            <fieldset className="kern-fieldset">
-              <legend className="kern-label">In welchem Bereich fällt dein Unternehmen?</legend>
-              <div className="kern-fieldset__body">
-                <KernCheckbox
-                  id="industrie"
-                  label="Industrie (Ich produziere Waren in großem Maßstab)"
-                  checked={selectedCategories.includes("industrie")}
-                  onChange={(e) => handleCheckboxChange("industrie", e.target.checked)}
-                />
-                <KernCheckbox
-                  id="handel"
-                  label="Handel (Ich verkaufe Produkte weiter)"
-                  checked={selectedCategories.includes("handel")}
-                  onChange={(e) => handleCheckboxChange("handel", e.target.checked)}
-                />
-                <KernCheckbox
-                  id="handwerk"
-                  label="Handwerk (Ich übe ein klassisches Handwerk aus)"
-                  checked={selectedCategories.includes("handwerk")}
-                  onChange={(e) => handleCheckboxChange("handwerk", e.target.checked)}
-                />
-                <KernCheckbox
-                  id="sonstiges"
-                  label="Sonstiges (Ich biete Wissen oder einen Service an)"
-                  checked={selectedCategories.includes("sonstiges")}
-                  onChange={(e) => handleCheckboxChange("sonstiges", e.target.checked)}
-                />
-              </div>
-            </fieldset>
+          <div className="mb-8">
+            <KernFieldset label="In welchem Bereich fällt dein Unternehmen?">
+              <KernCheckbox
+                id="industrie"
+                label="Industrie (Ich produziere Waren in großem Maßstab)"
+                checked={selectedCategories.includes("industrie")}
+                onChange={(e) => handleCheckboxChange("industrie", e.target.checked)}
+              />
+              <KernCheckbox
+                id="handel"
+                label="Handel (Ich verkaufe Produkte weiter)"
+                checked={selectedCategories.includes("handel")}
+                onChange={(e) => handleCheckboxChange("handel", e.target.checked)}
+              />
+              <KernCheckbox
+                id="handwerk"
+                label="Handwerk (Ich übe ein klassisches Handwerk aus)"
+                checked={selectedCategories.includes("handwerk")}
+                onChange={(e) => handleCheckboxChange("handwerk", e.target.checked)}
+              />
+              <KernCheckbox
+                id="sonstiges"
+                label="Sonstiges (Ich biete Wissen oder einen Service an)"
+                checked={selectedCategories.includes("sonstiges")}
+                onChange={(e) => handleCheckboxChange("sonstiges", e.target.checked)}
+              />
+            </KernFieldset>
           </div>
 
           {/* Haben Sie die Tätigkeit bereits begonnen? */}
-          <div className={styles.fieldWrapper}>
+          <div className="mb-8">
             <KernRadioGroup
               name="begonnen"
               legend="Haben Sie die Tätigkeit bereits begonnen?"
@@ -118,7 +115,7 @@ export function Step2UnternehmenTaetigkeit() {
 
           {/* Conditional date input - shown only when "Ja" is selected */}
           {begonnen === "ja" && (
-            <div className={styles.fieldWrapper}>
+            <div className="mb-8">
               <KernInputDate
                 id="startdatum"
                 label="Wann haben Sie die Tätigkeit begonnen?"
