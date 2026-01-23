@@ -28,9 +28,24 @@ const getRechtsformLabel = (value: Rechtsform | "") => {
   return rechtsformOptions.find((opt) => opt.value === value)?.label ?? "";
 };
 
-const getTaetigkeitLabel = (value: string) => {
+const getTaetigkeitLabels = (value: string) => {
   if (!value) return "";
-  return taetigkeitOptions.find((opt) => opt.value === value)?.label ?? "";
+  // Split comma-separated IDs and look up each label
+  const ids = value.split(',').filter(id => id.trim());
+
+  // Mock search results that match Step2Taetigkeit
+  const searchResults = [
+    { id: "reparatur-moebel", title: "Reparatur von Möbeln und Einrichtungsgegenständen" },
+    { id: "bautischlerei-schlosserei", title: "Bautischlerei und -schlosserei" },
+    { id: "herstellung-sonstige-moebel", title: "Herstellung von sonstigen Möbeln a. n. g." },
+  ];
+
+  const labels = ids.map(id => {
+    const result = searchResults.find(r => r.id === id);
+    return result?.title ?? id;
+  });
+
+  return labels.join(', ');
 };
 
 const getSideActivityLabel = (value: SideActivity) => {
@@ -39,18 +54,18 @@ const getSideActivityLabel = (value: SideActivity) => {
 };
 
 const getHasEmployeesTextForSummary = (value: HasEmployees) => {
-  const textMap: Record<HasEmployees, string> = {
-    with: "mit Angestellten",
-    without: "ohne Angestellte",
-    "": "",
-  };
-  return textMap[value] || "";
+  if (value === "with") {
+    return <>Sie planen <strong>Mitarbeiter einzustellen</strong>.</>;
+  } else if (value === "without") {
+    return <>Sie planen <strong>nicht Mitarbeiter einzustellen</strong>.</>;
+  }
+  return "";
 };
 
 function SummaryText({ formData }: { formData: FormData }) {
   return (
     <KernText>
-      Sie möchten eine <strong>{getRechtsformLabel(formData.rechtsform)}</strong> gründen mit der Tätigkeit <strong>{getTaetigkeitLabel(formData.taetigkeit)}</strong>. Dies ist eine <strong>{getSideActivityLabel(formData.isSideActivity) === "Ja" ? "Nebentätigkeit" : "Haupttätigkeit"}</strong> und Sie planen <strong>{getHasEmployeesTextForSummary(formData.hasEmployees)}</strong>.
+      Sie möchten eine <strong>{getRechtsformLabel(formData.rechtsform)}</strong> gründen mit der Tätigkeit <strong>{getTaetigkeitLabels(formData.taetigkeit)}</strong>. Dies ist eine <strong>{getSideActivityLabel(formData.isSideActivity) === "Ja" ? "Nebentätigkeit" : "Haupttätigkeit"}</strong>. {getHasEmployeesTextForSummary(formData.hasEmployees)}
     </KernText>
   );
 }
