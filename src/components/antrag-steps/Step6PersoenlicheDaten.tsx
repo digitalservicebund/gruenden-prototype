@@ -50,7 +50,7 @@ export function Step6PersoenlicheDaten() {
               id="geburtsdatum"
               label="Geburtsdatum"
               value={formData.geburtsdatum}
-              onChange={(e) => updateFormData({ geburtsdatum: e.target.value })}
+              onChange={(e) => updateFormData({ geburtsdatum: (e.target as unknown as HTMLInputElement).value })}
               required
             />
           </div>

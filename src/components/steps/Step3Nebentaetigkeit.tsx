@@ -6,7 +6,7 @@ import {
   KernRadioGroup,
   KernAlert,
 } from "@kern-ux-annex/kern-react-kit";
-import { type FormData, type SideActivity, sideActivityOptions } from "@/app/types";
+import { type FormData, sideActivityOptions } from "@/app/types";
 
 interface Step3NebentaetigkeitProps {
   formData: FormData;

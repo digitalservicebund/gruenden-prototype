@@ -5,7 +5,7 @@ import {
   KernColumn,
   KernRadioGroup,
 } from "@kern-ux-annex/kern-react-kit";
-import { type FormData, type HasEmployees, hasEmployeesOptions } from "@/app/types";
+import { type FormData, hasEmployeesOptions } from "@/app/types";
 
 interface Step4AngestellteProps {
   formData: FormData;

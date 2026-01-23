@@ -115,7 +115,7 @@ export function Step2UnternehmenTaetigkeit() {
                 id="startdatum"
                 label="Wann haben Sie die Tätigkeit begonnen?"
                 value={formData.startdatum}
-                onChange={(e) => updateFormData({ startdatum: e.target.value })}
+                onChange={(e) => updateFormData({ startdatum: (e.target as unknown as HTMLInputElement).value })}
               />
             </div>
           )}

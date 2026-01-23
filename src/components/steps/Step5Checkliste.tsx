@@ -4,7 +4,6 @@ import {
   KernRow,
   KernColumn,
   KernContainer,
-  KernAlert,
   KernAccordion,
 } from "@kern-ux-annex/kern-react-kit";
 import { PrimaryButton } from "@/components/PrimaryButton";
@@ -18,7 +17,6 @@ import {
   rechtsformOptions,
   taetigkeitOptions,
   sideActivityOptions,
-  hasEmployeesOptions,
 } from "@/app/types";
 
 interface Step5ChecklisteProps {
@@ -38,11 +36,6 @@ const getTaetigkeitLabel = (value: string) => {
 const getSideActivityLabel = (value: SideActivity) => {
   if (!value) return "";
   return sideActivityOptions.find((opt) => opt.value === value)?.label ?? "";
-};
-
-const getHasEmployeesLabel = (value: HasEmployees) => {
-  if (!value) return "";
-  return hasEmployeesOptions.find((opt) => opt.value === value)?.label ?? "";
 };
 
 const getHasEmployeesTextForSummary = (value: HasEmployees) => {

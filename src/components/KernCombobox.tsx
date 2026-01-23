@@ -47,13 +47,14 @@ export function KernCombobox({
   useEffect(() => {
     if (value) {
       const selectedOption = options.find((opt) => opt.value === value);
-      if (selectedOption) {
+      if (selectedOption && selectedOption.label !== inputValue) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setInputValue(selectedOption.label);
       }
-    } else {
+    } else if (inputValue !== "") {
       setInputValue("");
     }
-  }, [value, options]);
+  }, [value, options, inputValue]);
 
   const filteredOptions = useMemo(() => {
     if (!inputValue) return options;

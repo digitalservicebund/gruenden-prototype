@@ -59,19 +59,21 @@ export function StepIndicator({ steps, currentStep, completedSteps, onStepClick 
                 >
                   {step.id}
                 </div>
-                <KernText
-                  style={{
-                    margin: 0,
-                    fontWeight: isActive ? "bold" : "normal",
-                    color: isActive
-                      ? "var(--kern-color-action-default, #1A3DA5)"
-                      : isAccessible
-                        ? "var(--kern-color-layout-text-default)"
-                        : "var(--kern-color-layout-text-muted)",
-                  }}
-                >
-                  {step.title}
-                </KernText>
+                <div className={`m-0 ${isActive ? "font-bold" : "font-normal"}`}>
+                  <KernText>
+                    <span
+                      style={{
+                        color: isActive
+                          ? "var(--kern-color-action-default, #1A3DA5)"
+                          : isAccessible
+                            ? "var(--kern-color-layout-text-default)"
+                            : "var(--kern-color-layout-text-muted)",
+                      }}
+                    >
+                      {step.title}
+                    </span>
+                  </KernText>
+                </div>
               </div>
             </div>
           );

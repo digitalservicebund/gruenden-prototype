@@ -6,7 +6,7 @@ import {
   KernRadioGroup,
 } from "@kern-ux-annex/kern-react-kit";
 import { RechtsformHelper } from "@/components/RechtsformHelper";
-import { type FormData, type Rechtsform, rechtsformOptions } from "@/app/types";
+import { type FormData, rechtsformOptions } from "@/app/types";
 
 interface Step1RechtsformProps {
   formData: FormData;

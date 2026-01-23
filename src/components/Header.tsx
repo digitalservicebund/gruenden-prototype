@@ -1,6 +1,4 @@
-import { KernContainer, KernRow } from "@kern-ux-annex/kern-react-kit";
-
-import { KernColumn } from "@kern-ux-annex/kern-react-kit";
+import { KernContainer } from "@kern-ux-annex/kern-react-kit";
 
 function EagleLogo() {
     return (

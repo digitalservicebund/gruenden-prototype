@@ -2,9 +2,6 @@
 
 import { useState } from "react";
 import {
-  KernButton,
-  KernHeading,
-  KernText,
   KernContainer,
   KernRow,
   KernColumn,

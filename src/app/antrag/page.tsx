@@ -132,24 +132,26 @@ export default function AntragPage() {
               </div>
 
               {/* Navigation Buttons */}
-              <KernRow style={{ marginTop: "2rem" }}>
-                <KernColumn sizes={12}>
-                  <div style={{ display: "flex", justifyContent: "space-between", gap: "1rem" }}>
-                    <div>
-                      {currentStep > 1 && (
-                        <SecondaryButton text="Zurück" onClick={handleBack} />
-                      )}
+              <div className="mt-8">
+                <KernRow>
+                  <KernColumn sizes={12}>
+                    <div style={{ display: "flex", justifyContent: "space-between", gap: "1rem" }}>
+                      <div>
+                        {currentStep > 1 && (
+                          <SecondaryButton text="Zurück" onClick={handleBack} />
+                        )}
+                      </div>
+                      <div>
+                        {currentStep < TOTAL_STEPS ? (
+                          <PrimaryButton text="Weiter" onClick={handleNext} />
+                        ) : (
+                          <PrimaryButton text="Antrag einreichen" onClick={() => {}} />
+                        )}
+                      </div>
                     </div>
-                    <div>
-                      {currentStep < TOTAL_STEPS ? (
-                        <PrimaryButton text="Weiter" onClick={handleNext} />
-                      ) : (
-                        <PrimaryButton text="Antrag einreichen" onClick={() => {}} />
-                      )}
-                    </div>
-                  </div>
-                </KernColumn>
-              </KernRow>
+                  </KernColumn>
+                </KernRow>
+              </div>
             </div>
           </KernColumn>
         </KernRow>
