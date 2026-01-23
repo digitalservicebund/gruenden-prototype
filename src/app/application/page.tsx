@@ -85,13 +85,15 @@ export default function Home() {
     <Topbar />
     <Header />
     <KernContainer>
-      <KernRow>
-        <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-          <KernText muted>
-            Schritt {currentStep} von {TOTAL_STEPS}
-          </KernText>
-        </KernColumn>
-      </KernRow>
+      {currentStep < TOTAL_STEPS && (
+        <KernRow>
+          <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
+            <KernText muted>
+              Schritt {currentStep} von {TOTAL_STEPS}
+            </KernText>
+          </KernColumn>
+        </KernRow>
+      )}
 
       {/* Step 1: Rechtsform */}
       <div style={{ display: currentStep === 1 ? "block" : "none" }}>
