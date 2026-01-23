@@ -5,6 +5,7 @@ import {
   KernColumn,
   KernRadioGroup,
   KernAlert,
+  KernList,
 } from "@kern-ux-annex/kern-react-kit";
 import { type FormData, sideActivityOptions } from "@/app/types";
 
@@ -41,9 +42,15 @@ export function Step3Nebentaetigkeit({ formData, onSideActivityChange }: Step3Ne
         <KernRow>
           <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
             <KernAlert
-              title="Gut zu wissen"
+              title="Achten Sie auf diese Vorraussetzungen"
               variant="info"
-              body="Sie bleiben über Ihren Hauptjob krankenversichert. Dadurch sparen Sie hohe zusätzliche Kosten für Ihre Versicherung. Das gilt aber nur, wenn Sie maximal 20 Stunden pro Woche für Ihr neues Unternehmen arbeiten."
+              body={
+                <KernList type="bullet" items={[
+                  { content: "Sie arbeiten weiter in Ihrem Hauptberuf" },
+                  { content: "Ihr Einkommen aus Ihrer Selbständigkeit ist geringer als aus Ihrer Haupttätigkeit" },
+                  { content: "Sie bleiben über Ihren Hauptberuf weiter sozialversichert" },
+                ]} />
+              }
             />
           </KernColumn>
         </KernRow>
