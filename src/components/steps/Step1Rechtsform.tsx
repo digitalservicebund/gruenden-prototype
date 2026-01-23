@@ -44,12 +44,6 @@ export function Step1Rechtsform({ formData, onRechtsformChange }: Step1Rechtsfor
           />
         </KernColumn>
       </KernRow>
-
-      <KernRow>
-        <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-          <RechtsformHelper onSelect={onRechtsformChange} />
-        </KernColumn>
-      </KernRow>
     </>
   );
 }
