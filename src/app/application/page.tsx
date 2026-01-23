@@ -135,25 +135,21 @@ export default function Home() {
       {/* Navigation buttons */}
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-          <KernRow justify="between">
-            <KernColumn sizes={6}>
-              {currentStep > 1 && (
-                <SecondaryButton
-                  text="Zurück"
-                  onClick={handleBack}
-                />
-              )}
-            </KernColumn>
-            <KernColumn sizes={6} align="end">
-              {currentStep < TOTAL_STEPS && (
-                <PrimaryButton
-                  text="Weiter"
-                  onClick={handleNext}
-                  disabled={!canProceed()}
-                />
-              )}
-            </KernColumn>
-          </KernRow>
+          <div style={{ display: "flex", gap: "16px" }}>
+            {currentStep > 1 && (
+              <SecondaryButton
+                text="Zurück"
+                onClick={handleBack}
+              />
+            )}
+            {currentStep < TOTAL_STEPS && (
+              <PrimaryButton
+                text="Weiter"
+                onClick={handleNext}
+                disabled={!canProceed()}
+              />
+            )}
+          </div>
         </KernColumn>
       </KernRow>
     </KernContainer>
