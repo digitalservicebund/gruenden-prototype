@@ -20,11 +20,6 @@ export function Step1Rechtsform({ formData, onRechtsformChange }: Step1Rechtsfor
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
           <KernHeading level={2}>Welche Rechtsform möchten Sie gründen?</KernHeading>
-        </KernColumn>
-      </KernRow>
-
-      <KernRow>
-        <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
           <KernText>
           Für verschiedene Rechtsformen gelten unterschiedliche Regeln für die Gründung.
           </KernText>
@@ -35,7 +30,6 @@ export function Step1Rechtsform({ formData, onRechtsformChange }: Step1Rechtsfor
         <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
           <KernRadioGroup
             name="rechtsform"
-            legend="Rechtsform"
             selected={formData.rechtsform}
             items={rechtsformOptions.map((opt) => ({
               id: opt.value,
