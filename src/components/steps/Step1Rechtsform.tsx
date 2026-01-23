@@ -4,6 +4,7 @@ import {
   KernRow,
   KernColumn,
   KernRadioGroup,
+  KernFieldset,
 } from "@kern-ux-annex/kern-react-kit";
 import { RechtsformHelper } from "@/components/RechtsformHelper";
 import { type FormData, rechtsformOptions } from "@/app/types";
@@ -37,6 +38,7 @@ export function Step1Rechtsform({ formData, onRechtsformChange }: Step1Rechtsfor
             legend="Rechtsform"
             selected={formData.rechtsform}
             items={rechtsformOptions.map((opt) => ({
+              id: opt.value,
               value: opt.value,
               label: opt.label,
             }))}
