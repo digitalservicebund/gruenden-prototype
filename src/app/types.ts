@@ -44,8 +44,8 @@ export const sideActivityOptions = [
 export type HasEmployees = "with" | "without" | "";
 
 export const hasEmployeesOptions = [
-  { value: "with", label: "Mit Angestellten" },
-  { value: "without", label: "Ohne Angestellte" },
+  { value: "with", label: "Ja, ich plane Mitarbeiter einzustellen" },
+  { value: "without", label: "Nein" },
 ];
 
 export interface FormData {
