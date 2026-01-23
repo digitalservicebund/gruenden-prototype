@@ -482,14 +482,6 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
 
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-          <KernText>
-            Basierend auf Ihren Angaben haben wir eine Checkliste für die nächsten Schritte erstellt.
-          </KernText>
-        </KernColumn>
-      </KernRow>
-
-      <KernRow>
-        <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
           <KernAccordion
             items={
               isGmbH
