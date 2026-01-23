@@ -5,6 +5,7 @@ import {
   KernContainer,
   KernRow,
   KernColumn,
+  KernText,
 } from "@kern-ux-annex/kern-react-kit";
 import {
   type FormData,
@@ -84,7 +85,6 @@ export default function Home() {
     <Topbar />
     <Header />
     <KernContainer>
-      {/*
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
           <KernText muted>
@@ -92,7 +92,6 @@ export default function Home() {
           </KernText>
         </KernColumn>
       </KernRow>
-      */}
 
       {/* Step 1: Rechtsform */}
       <div style={{ display: currentStep === 1 ? "block" : "none" }}>
