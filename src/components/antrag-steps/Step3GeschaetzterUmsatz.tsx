@@ -46,28 +46,28 @@ export function Step3GeschaetzterUmsatz() {
 
           {showKleinunternehmerregelung && (
             <div className="mb-8">
-              <KernHeading level={3} size="medium">
+              <KernHeading level={3} size="medium" className="mb-4">
                 Wollen Sie die Kleinunternehmerregelung nutzen?
               </KernHeading>
 
               <KernAlert
                 title="Achten Sie auf diese Vorraussetzungen"
                 variant="info"
+                className="mb-4"
                 body={
-                  <>
-                    <KernList type="bullet" items={[
-                      { content: "Günstiger für Privatkunden: Sie berechnen keine Mehrwertsteuer." },
-                      { content: "Einfacher Buchhaltung: Keine monatlichen Berichte an das Finanzamt nötig." },
-                      { content: "Wichtig: Sie erhalten die Steuer für Ihre eigenen Einkäufe (z. B. Werkzeug) nicht zurück." },
-                    ]} />
-                    <KernCheckbox
-                      id="kleinunternehmerregelung"
-                      label="Als Kleinunternehmen registeiren"
-                      checked={formData.kleinunternehmerregelung === "ja"}
-                      onChange={(e) => updateFormData({ kleinunternehmerregelung: e.target.checked ? "ja" : "nein" })}
-                    />
-                  </>
+                  <KernList type="bullet" items={[
+                    { content: "Günstiger für Privatkunden: Sie berechnen keine Mehrwertsteuer." },
+                    { content: "Einfacher Buchhaltung: Keine monatlichen Berichte an das Finanzamt nötig." },
+                    { content: "Wichtig: Sie erhalten die Steuer für Ihre eigenen Einkäufe (z. B. Werkzeug) nicht zurück." },
+                  ]} />
                 }
+              />
+
+              <KernCheckbox
+                id="kleinunternehmerregelung"
+                label="Als Kleinunternehmen registeiren"
+                checked={formData.kleinunternehmerregelung === "ja"}
+                onChange={(e) => updateFormData({ kleinunternehmerregelung: e.target.checked ? "ja" : "nein" })}
               />
             </div>
           )}
