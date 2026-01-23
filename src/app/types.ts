@@ -37,8 +37,8 @@ export const taetigkeitOptions: TaetigkeitOption[] = [
 export type SideActivity = "yes" | "no" | "";
 
 export const sideActivityOptions = [
-  { value: "yes", label: "Ja" },
-  { value: "no", label: "Nein" },
+  { value: "yes", label: "Nebenberuflich" },
+  { value: "no", label: "Hauptberuflich" },
 ];
 
 export type HasEmployees = "with" | "without" | "";
