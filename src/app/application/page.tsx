@@ -50,6 +50,10 @@ export default function Home() {
     setFormData((prev) => ({ ...prev, taetigkeit: value }));
   };
 
+  const handleTaetigkeitFreetextChange = (value: string) => {
+    setFormData((prev) => ({ ...prev, taetigkeitFreetext: value }));
+  };
+
   const handleSideActivityChange = (value: string) => {
     setFormData((prev) => ({ ...prev, isSideActivity: value as SideActivity | "" }));
   };
@@ -63,6 +67,7 @@ export default function Home() {
       return formData.rechtsform !== "";
     }
     if (currentStep === 2) {
+      // Enable "Weiter" when at least one search result is selected
       return formData.taetigkeit !== "";
     }
     if (currentStep === 3) {
@@ -102,6 +107,7 @@ export default function Home() {
         <Step2Taetigkeit
           formData={formData}
           onTaetigkeitChange={handleTaetigkeitChange}
+          onTaetigkeitFreetextChange={handleTaetigkeitFreetextChange}
         />
       </div>
 

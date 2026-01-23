@@ -51,6 +51,7 @@ export const hasEmployeesOptions = [
 export interface FormData {
   rechtsform: Rechtsform | "";
   taetigkeit: string;
+  taetigkeitFreetext: string;
   isSideActivity: SideActivity;
   hasEmployees: HasEmployees;
 }
@@ -58,6 +59,7 @@ export interface FormData {
 export const initialFormData: FormData = {
   rechtsform: "",
   taetigkeit: "",
+  taetigkeitFreetext: "",
   isSideActivity: "",
   hasEmployees: "",
 };
