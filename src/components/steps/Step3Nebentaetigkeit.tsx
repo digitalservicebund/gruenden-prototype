@@ -18,15 +18,7 @@ export function Step3Nebentaetigkeit({ formData, onSideActivityChange }: Step3Ne
     <>
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-          <KernHeading level={2}>Nebentätigkeit</KernHeading>
-        </KernColumn>
-      </KernRow>
-
-      <KernRow>
-        <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-          <KernText>
-            Wird dein Startup erstmal eine Nebentätigkeit sein?
-          </KernText>
+          <KernHeading level={2}>Wie wollen Sie diese Tätigkeit ausüben?</KernHeading>
         </KernColumn>
       </KernRow>
 
@@ -34,9 +26,9 @@ export function Step3Nebentaetigkeit({ formData, onSideActivityChange }: Step3Ne
         <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
           <KernRadioGroup
             name="isSideActivity"
-            legend="Nebentätigkeit"
             selected={formData.isSideActivity}
             items={sideActivityOptions.map((opt) => ({
+              id: opt.value,
               value: opt.value,
               label: opt.label,
             }))}
