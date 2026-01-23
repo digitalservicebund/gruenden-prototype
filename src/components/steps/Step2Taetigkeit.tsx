@@ -6,6 +6,7 @@ import {
   KernInput,
   KernCheckbox,
   KernList,
+  KernText,
 } from "@kern-ux-annex/kern-react-kit";
 import { PrimaryButton } from "@/components/PrimaryButton";
 import { type FormData } from "@/app/types";
@@ -103,6 +104,9 @@ export function Step2Taetigkeit({ formData, onTaetigkeitChange, onTaetigkeitFree
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
           <KernHeading level={2}>Womit wird sich Ihr neues Unternehmen beschäftigen?</KernHeading>
+          <KernText>
+            Bitte beschreiben Sie die Tätigkeiten, die Sie in dem Unternehmen ausüben wollen.
+          </KernText>
         </KernColumn>
       </KernRow>
 
@@ -115,7 +119,7 @@ export function Step2Taetigkeit({ formData, onTaetigkeitChange, onTaetigkeitFree
                 label=""
                 value={formData.taetigkeitFreetext || ""}
                 onChange={(e) => onTaetigkeitFreetextChange(e.target.value)}
-                placeholder="Tätigkeit eingeben..."
+                placeholder="Tätigkeiten eingeben..."
                 required
               />
             </div>
