@@ -6,7 +6,9 @@ import {
   KernText,
   KernRow,
   KernColumn,
-  KernRadioGroup,
+  KernAlert,
+  KernList,
+  KernCheckbox,
 } from "@kern-ux-annex/kern-react-kit";
 import { JahresBetraege } from "./JahresBetraege";
 import { useFormData } from "@/contexts/FormContext";
@@ -23,17 +25,16 @@ export function Step3GeschaetzterUmsatz() {
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 10, lg: 8 }}>
           <KernHeading level={2} size="large">
-            Wie hoch schätzen Sie Ihre Umsätze?
+          Wie hoch wird Ihr geschätzter Umsatz sein?
           </KernHeading>
+          <KernText>
+          Geben Sie hier Ihre geschätzten Einnahmen ein. Damit ist der Betrag gemeint, den Kunden für Ihre Leistungen an Sie zahlen (ohne Mehrwertsteuer).
+          </KernText>
         </KernColumn>
       </KernRow>
 
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 10, lg: 8 }}>
-          <KernText>
-            Tragen Sie hier Ihre geschätzten Einnahmen ein – also alles Geld, das Kunden für Ihre Leistungen zahlen, ohne Mehrwertsteuer. Eine ungefähre Schätzung Ihrer Umsätze genügt dabei völlig.
-          </KernText>
-
           <JahresBetraege
             diesJahrValue={formData.umsatzDiesesJahr}
             folgejahrValue={formData.umsatzFolgejahr}
@@ -49,24 +50,24 @@ export function Step3GeschaetzterUmsatz() {
                 Wollen Sie die Kleinunternehmerregelung nutzen?
               </KernHeading>
 
-              <ul className="mb-4">
-                <li>
-                  Keine Extra-Steuer: Sie schreiben keine Umsatzsteuer auf Ihre Rechnungen und sind für Privatkunden günstiger.
-                </li>
-                <li>
-                  Einfache Buch-Haltung: Sie müssen dem Finanzamt keine regelmäßigen Berichte über die Umsatzsteuer schicken.
-                </li>
-              </ul>
-
-              <KernRadioGroup
-                name="kleinunternehmerregelung"
-                legend=""
-                selected={formData.kleinunternehmerregelung}
-                items={[
-                  { value: "ja", label: "Ja" },
-                  { value: "nein", label: "Nein" },
-                ]}
-                onChange={(value) => updateFormData({ kleinunternehmerregelung: value })}
+              <KernAlert
+                title="Achten Sie auf diese Vorraussetzungen"
+                variant="info"
+                body={
+                  <>
+                    <KernList type="bullet" items={[
+                      { content: "Günstiger für Privatkunden: Sie berechnen keine Mehrwertsteuer." },
+                      { content: "Einfacher Buchhaltung: Keine monatlichen Berichte an das Finanzamt nötig." },
+                      { content: "Wichtig: Sie erhalten die Steuer für Ihre eigenen Einkäufe (z. B. Werkzeug) nicht zurück." },
+                    ]} />
+                    <KernCheckbox
+                      id="kleinunternehmerregelung"
+                      label="Als Kleinunternehmen registeiren"
+                      checked={formData.kleinunternehmerregelung === "ja"}
+                      onChange={(e) => updateFormData({ kleinunternehmerregelung: e.target.checked ? "ja" : "nein" })}
+                    />
+                  </>
+                }
               />
             </div>
           )}

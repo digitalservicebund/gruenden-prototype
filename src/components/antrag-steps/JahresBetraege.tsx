@@ -22,7 +22,7 @@ export function JahresBetraege({
       <div className="mb-8">
         <KernInput
           id={`${idPrefix}-dieses-jahr`}
-          label="Dieses Jahr (euro)"
+          label="Dieses Jahr (Euro)"
           type="number"
           value={diesJahrValue}
           onChange={(e) => onDiesJahrChange(e.target.value)}
@@ -33,7 +33,7 @@ export function JahresBetraege({
       <div className="mb-8">
         <KernInput
           id={`${idPrefix}-folgejahr`}
-          label="Folgejahr (euro)"
+          label="Folgejahr (Euro)"
           type="number"
           value={folgejahrValue}
           onChange={(e) => onFolgejahrChange(e.target.value)}

@@ -70,7 +70,7 @@ export default function AntragPage() {
         <KernRow>
           <KernColumn sizes={{ xs: 12, md: 12, lg: 12 }}>
             <KernHeading level={1} size="x-large">
-              Unternehmensanmeldung
+            Kombiantrag: Gewerbe & Steuern
             </KernHeading>
           </KernColumn>
         </KernRow>
