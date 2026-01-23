@@ -27,13 +27,17 @@ export function Step5UmsatzsteuerId() {
           <KernText>
             Sobald Sie Leistungen oder Waren an Unternehmen in anderen EU-Ländern verkaufen, benötigen Sie eine Umsatzsteuer-Identifikationsnummer (USt-IdNr.).
           </KernText>
+        </KernColumn>
+      </KernRow>
 
+      <KernRow>
+        <KernColumn sizes={{ xs: 12, md: 10, lg: 8 }}>
           <KernRadioGroup
             name="umsatzsteuerId"
             selected={formData.umsatzsteuerId}
             items={[
-              { value: "ja", label: "Ja" },
-              { value: "nein", label: "Nein" },
+              { id: "ja", value: "ja", label: "Ja" },
+              { id: "nein", value: "nein", label: "Nein" },
             ]}
             onChange={(value) => updateFormData({ umsatzsteuerId: value })}
           />
