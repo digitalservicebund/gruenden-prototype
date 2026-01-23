@@ -13,7 +13,6 @@ import { Header } from "@/components/Header";
 import { PrimaryButton } from "@/components/PrimaryButton";
 import { SecondaryButton } from "@/components/SecondaryButton";
 import { StepIndicator } from "@/components/StepIndicator";
-import { Step1StartAntrag } from "@/components/antrag-steps/Step1StartAntrag";
 import { Step2UnternehmenTaetigkeit } from "@/components/antrag-steps/Step2UnternehmenTaetigkeit";
 import { Step3GeschaetzterUmsatz } from "@/components/antrag-steps/Step3GeschaetzterUmsatz";
 import { Step4GeplannterGewinn } from "@/components/antrag-steps/Step4GeplannterGewinn";
@@ -24,14 +23,13 @@ import { Step8AntragAbsenden } from "@/components/antrag-steps/Step8AntragAbsend
 import { FormProvider } from "@/contexts/FormContext";
 
 const STEPS = [
-  { id: 1, title: "Start der Antrag" },
-  { id: 2, title: "Unternehmen und Tätigkeit" },
-  { id: 3, title: "Geschätzter Umsatz" },
-  { id: 4, title: "Geplannter Gewinn" },
-  { id: 5, title: "Umsatzsteuer ID" },
-  { id: 6, title: "Ihre Daten" },
-  { id: 7, title: "Kontaktdaten" },
-  { id: 8, title: "Antrag absenden" },
+  { id: 1, title: "Unternehmen und Tätigkeit" },
+  { id: 2, title: "Geschätzter Umsatz" },
+  { id: 3, title: "Geplannter Gewinn" },
+  { id: 4, title: "Umsatzsteuer ID" },
+  { id: 5, title: "Ihre Daten" },
+  { id: 6, title: "Kontaktdaten" },
+  { id: 7, title: "Antrag absenden" },
 ];
 
 const TOTAL_STEPS = STEPS.length;
@@ -93,41 +91,36 @@ export default function AntragPage() {
             <div style={{ paddingLeft: "2rem" }}>
               {/* Step 1 */}
               <div style={{ display: currentStep === 1 ? "block" : "none" }}>
-                <Step1StartAntrag />
+                <Step2UnternehmenTaetigkeit />
               </div>
 
               {/* Step 2 */}
               <div style={{ display: currentStep === 2 ? "block" : "none" }}>
-                <Step2UnternehmenTaetigkeit />
+                <Step3GeschaetzterUmsatz />
               </div>
 
               {/* Step 3 */}
               <div style={{ display: currentStep === 3 ? "block" : "none" }}>
-                <Step3GeschaetzterUmsatz />
+                <Step4GeplannterGewinn />
               </div>
 
               {/* Step 4 */}
               <div style={{ display: currentStep === 4 ? "block" : "none" }}>
-                <Step4GeplannterGewinn />
+                <Step5UmsatzsteuerId />
               </div>
 
               {/* Step 5 */}
               <div style={{ display: currentStep === 5 ? "block" : "none" }}>
-                <Step5UmsatzsteuerId />
+                <Step6PersoenlicheDaten />
               </div>
 
               {/* Step 6 */}
               <div style={{ display: currentStep === 6 ? "block" : "none" }}>
-                <Step6PersoenlicheDaten />
+                <Step7Kontakt />
               </div>
 
               {/* Step 7 */}
               <div style={{ display: currentStep === 7 ? "block" : "none" }}>
-                <Step7Kontakt />
-              </div>
-
-              {/* Step 8 */}
-              <div style={{ display: currentStep === 8 ? "block" : "none" }}>
                 <Step8AntragAbsenden />
               </div>
 
