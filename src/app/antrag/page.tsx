@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   KernContainer,
   KernRow,
@@ -35,6 +36,7 @@ const STEPS = [
 const TOTAL_STEPS = STEPS.length;
 
 export default function AntragPage() {
+  const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);
 
@@ -60,6 +62,10 @@ export default function AntragPage() {
     if (isAccessible) {
       setCurrentStep(step);
     }
+  };
+
+  const handleSubmit = () => {
+    router.push("/bestaetigung");
   };
 
   return (
@@ -135,7 +141,7 @@ export default function AntragPage() {
                       {currentStep < TOTAL_STEPS ? (
                         <PrimaryButton text="Weiter" onClick={handleNext} />
                       ) : (
-                        <PrimaryButton text="Antrag einreichen" onClick={() => {}} />
+                        <PrimaryButton text="Antrag einreichen" onClick={handleSubmit} />
                       )}
                     </div>
                   </KernColumn>
