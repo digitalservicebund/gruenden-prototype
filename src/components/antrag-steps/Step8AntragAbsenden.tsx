@@ -116,8 +116,8 @@ export function Step8AntragAbsenden() {
             />
           )}
 
-          {/* Geplannter Gewinn */}
-          <SectionHeading title="Geplannter Gewinn" />
+          {/* Geschätzter Gewinn */}
+          <SectionHeading title="Geschätzter Gewinn" />
           <DataRow
             label="Betriebsgewinn dieses Jahr"
             value={formData.gewinnDiesesJahr ? formatCurrency(formData.gewinnDiesesJahr) : ""}
@@ -150,7 +150,7 @@ export function Step8AntragAbsenden() {
             </>
           )}
 
-          {/* Umsatzsteuer ID */}
+          {/* Umsatzsteuer-Identifikationsnummer */}
           <SectionHeading title="Umsatzsteuer-Identifikationsnummer" />
           <DataRow
             label="Umsatzsteuer-ID beantragen"

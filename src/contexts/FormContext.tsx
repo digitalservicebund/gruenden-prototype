@@ -23,13 +23,13 @@ interface FormData {
   umsatzFolgejahr: string;
   kleinunternehmerregelung: string;
 
-  // Step 4: Geplannter Gewinn
+  // Step 4: Geschätzer Gewinn
   gewinnDiesesJahr: string;
   gewinnFolgejahr: string;
   weitereGewinne: string[];
   weitereGewinneValues: WeitereGewinneValues;
 
-  // Step 5: Umsatzsteuer ID
+  // Step 5: Umsatzsteuer-Identifikationsnummer
   umsatzsteuerId: string;
 
   // Step 6: Persönliche Daten

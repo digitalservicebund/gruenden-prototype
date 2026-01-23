@@ -54,7 +54,7 @@ export function Step4GeplannterGewinn() {
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 10, lg: 8 }}>
           <KernHeading level={2} size="large">
-            Wie hoch schätzen Sie Ihre Betriebsgewinne?
+            Wie hoch wird Ihr geschätzter Gewinn sein?
           </KernHeading>
         </KernColumn>
       </KernRow>
