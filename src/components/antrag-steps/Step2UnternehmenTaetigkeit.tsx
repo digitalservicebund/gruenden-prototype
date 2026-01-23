@@ -17,7 +17,7 @@ import { useFormData } from "@/contexts/FormContext";
 function MockSummaryText() {
   return (
     <KernText>
-      TODO: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut <strong>labore et dolore magna aliqua</strong>. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut <strong>aliquip ex ea commodo consequat</strong>.
+      Sie möchten eine <strong>Einzelunternehmen</strong> gründen mit der Tätigkeit <strong>Reparatur von Möbeln und Einrichtungsgegenständen</strong>. Dies ist eine <strong>Haupttätigkeit</strong>. Sie planen <strong>nicht Mitarbeiter einzustellen</strong>.
     </KernText>
   );
 }
@@ -50,6 +50,7 @@ export function Step2UnternehmenTaetigkeit() {
               legend="Haben Sie die Tätigkeit bereits begonnen?"
               selected={formData.begonnen}
               items={taetigkeitBegonnenOptions.map((opt) => ({
+                id: opt.value,
                 value: opt.value,
                 label: opt.label,
               }))}
