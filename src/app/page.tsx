@@ -22,7 +22,7 @@ export default function Home() {
         <KernRow>
           <KernColumn sizes={{ xs: 12, md: 10, lg: 8 }}>
             <KernHeading level={1} size="x-large">
-              Gründen Sie Ihr Unternehmen in Deutschlend.
+              Gründen Sie Ihr Unternehmen in Deutschland.
             </KernHeading>
 
             <KernText>
