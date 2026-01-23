@@ -61,6 +61,7 @@ export function Step2UnternehmenTaetigkeit() {
           {formData.begonnen === "ja" && (
             <div className="mb-8">
               <KernInputDate
+                required={true}
                 id="startdatum"
                 label="Wann haben Sie die Tätigkeit begonnen?"
                 value={formData.startdatum}
