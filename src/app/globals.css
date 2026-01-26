@@ -1,3 +1,8 @@
 @import "@kern-ux/native/dist/kern.min.css";
 @import "@kern-ux/native/dist/fonts/fira-sans.css";
 @import "tailwindcss";
+
+/* Hacky bugfix: Make year input in KernInputDate as wide as it is supposed to, according to the docs */
+.kern-form-input__input#jahr {
+  max-width: var(--kern-metric-dimension-4x-large) !important;
+}
