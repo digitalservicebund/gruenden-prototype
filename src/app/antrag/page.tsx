@@ -25,8 +25,8 @@ import { FormProvider } from "@/contexts/FormContext";
 
 const STEPS = [
   { id: 1, title: "Unternehmen und Tätigkeit" },
-  { id: 2, title: "Geschätzter Umsatz" },
-  { id: 3, title: "Geschätzter Gewinn" },
+  { id: 2, title: "Geplanter Umsatz" },
+  { id: 3, title: "Geplanter Gewinn" },
   { id: 4, title: "Umsatzsteuer-Identifikationsnummer" },
   { id: 5, title: "Ihre Daten" },
   { id: 6, title: "Kontaktdaten" },
