@@ -65,7 +65,7 @@ const getHasEmployeesTextForSummary = (value: HasEmployees) => {
 function SummaryText({ formData }: { formData: FormData }) {
   return (
     <KernText>
-      Sie möchten eine <strong>{getRechtsformLabel(formData.rechtsform)}</strong> gründen mit der Tätigkeit <strong>{getTaetigkeitLabels(formData.taetigkeit)}</strong>. Dies ist eine <strong>{getSideActivityLabel(formData.isSideActivity) === "Ja" ? "Nebentätigkeit" : "Haupttätigkeit"}</strong>. {getHasEmployeesTextForSummary(formData.hasEmployees)}
+      Sie möchten eine <strong>{getRechtsformLabel(formData.rechtsform)}</strong> gründen mit der Tätigkeit <strong>{getTaetigkeitLabels(formData.taetigkeit)}</strong>. Dies ist eine <strong>{getSideActivityLabel(formData.isSideActivity) === "Nebenberuflich" ? "Nebentätigkeit" : "Haupttätigkeit"}</strong>. {getHasEmployeesTextForSummary(formData.hasEmployees)}
     </KernText>
   );
 }
