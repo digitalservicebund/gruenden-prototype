@@ -6,21 +6,13 @@ import {
   KernColumn,
   KernRadioGroup,
   KernInputDate,
-  KernText,
 } from "@kern-ux-annex/kern-react-kit";
 import {
   type TaetigkeitBegonnen,
   taetigkeitBegonnenOptions,
 } from "@/app/types";
 import { useFormData } from "@/contexts/FormContext";
-
-function MockSummaryText() {
-  return (
-    <KernText>
-      Sie möchten eine <strong>Einzelunternehmen</strong> gründen mit der Tätigkeit <strong>Reparatur von Möbeln und Einrichtungsgegenständen</strong>. Dies ist eine <strong>Haupttätigkeit</strong>. Sie planen <strong>nicht Mitarbeiter einzustellen</strong>.
-    </KernText>
-  );
-}
+import { MockSummaryText } from "@/components/MockSummaryText";
 
 export function Step2UnternehmenTaetigkeit() {
   const { formData, updateFormData } = useFormData();

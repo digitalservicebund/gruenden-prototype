@@ -8,6 +8,7 @@ import {
 } from "@kern-ux-annex/kern-react-kit";
 import { useFormData } from "@/contexts/FormContext";
 import { ausfuehrungOptions } from "@/app/types";
+import { MockSummaryText } from "@/components/MockSummaryText";
 
 // Helper component for displaying a data row
 function DataRow({ label, value }: { label: string; value: string | undefined }) {
@@ -79,18 +80,14 @@ export function Step8AntragAbsenden() {
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 10, lg: 8 }}>
           <KernHeading level={2} size="large">
-            Überprüfen und absenden
+          Bitte überprüfen Sie Ihre Angaben
           </KernHeading>
 
-          <KernText>
-            Bitte überprüfen Sie Ihre Angaben sorgfältig, bevor Sie den Antrag einreichen.
-          </KernText>
+          <MockSummaryText />
 
           {/* Unternehmen und Tätigkeit */}
           <SectionHeading title="Unternehmen und Tätigkeit" />
-          <DataRow label="Tätigkeit" value={formData.taetigkeit} />
           <DataRow label="Ausführung" value={getAusfuehrungLabel()} />
-          <DataRow label="Unternehmensbereiche" value={getCategoriesLabel()} />
           <DataRow
             label="Tätigkeit bereits begonnen"
             value={formData.begonnen === "ja" ? "Ja" : formData.begonnen === "nein" ? "Nein" : ""}
