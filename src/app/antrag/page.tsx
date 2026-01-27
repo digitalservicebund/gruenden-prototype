@@ -30,7 +30,7 @@ const STEPS = [
   { id: 4, title: "Umsatzsteuer-Identifikationsnummer" },
   { id: 5, title: "Ihre Daten" },
   { id: 6, title: "Kontaktdaten" },
-  { id: 7, title: "Antrag einreichen" },
+  { id: 7, title: "Antrag absenden" },
 ];
 
 const TOTAL_STEPS = STEPS.length;
