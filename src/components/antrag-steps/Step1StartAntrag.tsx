@@ -4,7 +4,7 @@ export function Step1StartAntrag() {
   return (
     <div>
       <KernHeading level={2} size="large">
-        Start der Antrag
+        Start des Antrags
       </KernHeading>
 
       <KernText>
