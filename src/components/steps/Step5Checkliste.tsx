@@ -84,9 +84,9 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
           {/* Name prüfen */}
           <KernRow>
             <KernColumn sizes={12}>
-              <KernHeading level={4}>Name prüfen</KernHeading>
+              <KernHeading level={4}>Wunschnamen auf Verfügbarkeit prüfen</KernHeading>
               <KernText>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+               Um eine reibungslose Eintragung in das Handelsregister zu gewährleisten, sollten Sie Ihren Wunschnamen vor der notariellen Beurkundung prüfen. Die IHK Berlin bietet hierfür einen speziellen Service zur Vorabklärung an.
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
@@ -101,7 +101,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
             <KernColumn sizes={12}>
               <KernHeading level={4}>Gesellschaftsvertrag aufsetzen</KernHeading>
               <KernText>
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Der Gesellschaftsvertrag bildet das rechtliche Fundament Ihres Unternehmens. Hierin legen Sie wichtige Spielregeln wie die Gewinnverteilung und die Geschäftsführung fest. Ein sorgfältig aufgesetzter Vertrag sorgt von Anfang an für Klarheit zwischen den Gesellschaftern und beugt späteren Konflikten vor.
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
@@ -122,7 +122,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
             <KernColumn sizes={12}>
               <KernHeading level={4}>Notariell gründen</KernHeading>
               <KernText>
-                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam est.
+                Die Gründung einer GmbH erfordert eine notarielle Beurkundung des Gesellschaftsvertrages. Dieser Termin kann auch digital im Wege einer Videokonferenz durchgeführt werden. Dabei erfolgt die Identitätsprüfung und die Unterzeichnung der Dokumente rein digital.
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
@@ -132,12 +132,12 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
             </KernColumn>
           </KernRow>
 
-          {/* Geschäftskonto öffnen */}
+          {/* Geschäftskonto eröffnen */}
           <KernRow>
             <KernColumn sizes={12}>
-              <KernHeading level={4}>Geschäftskonto öffnen</KernHeading>
+              <KernHeading level={4}>Geschäftskonto eröffnen</KernHeading>
               <KernText>
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+                Direkt nach der notariellen Beurkundung ist die Eröffnung eines Geschäftskontos erforderlich. Auf dieses Konto ist das im Gesellschaftsvertrag festgelegte Stammkapital einzuzahlen. Für die Kontoeröffnung benötigt die Bank den beurkundeten Gesellschaftsvertrag, die Gründungsurkunde sowie in der Regel die Gesellschafterliste.
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
@@ -147,12 +147,12 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
             </KernColumn>
           </KernRow>
 
-          {/* Stammkapitel einzahlen und nachweisen */}
+          {/* Stammkapitel nachweisen */}
           <KernRow>
             <KernColumn sizes={12}>
-              <KernHeading level={4}>Stammkapitel einzahlen und nachweisen</KernHeading>
+              <KernHeading level={4}>Stammkapitel nachweisen</KernHeading>
               <KernText>
-                Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio nam libero tempore cum soluta nobis est eligendi optio.
+                Nachdem Sie das Stammkapital auf Ihres Geschäftskonto eingezahlt haben, reichen Sie den Nachweis der Einzahlung bei Ihrem Notar ein. Dies ist die notwendige Voraussetzung für die Einreichung der Gründungsunterlagen beim Handelsregister.
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
@@ -167,7 +167,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
             <KernColumn sizes={12}>
               <KernHeading level={4}>Handelsregistereintrag</KernHeading>
               <KernText>
-                Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus ut aut reiciendis voluptatibus maiores alias.
+               Der Notar veranlasst nun die Eintragung beim Registergericht. Dieser Vorgang läuft für Sie automatisch ab. Im Anschluss erhalten Sie vom zuständigen Gericht eine Rechnung über die Eintragungsgebühren. 
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
@@ -177,12 +177,12 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
             </KernColumn>
           </KernRow>
 
-          {/* Unternehmen anmelden */}
+          {/* Kombiantrag: Gewerbe & Steuern */}
           <KernRow>
             <KernColumn sizes={12}>
-              <KernHeading level={4}>Unternehmen anmelden</KernHeading>
+              <KernHeading level={4}>Kombiantrag: Gewerbe & Steuern</KernHeading>
               <KernText>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Für Ihren Unternehmensstart sind die Gewerbeanmeldung und die Anmeldung beim Finanzamt erforderlich. Dieser Kombi-Antrag bündelt beide Prozesse und übermittelt Ihre Unterlagen direkt digital an die zuständigen Stellen.
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
@@ -202,12 +202,12 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
             title: "Mitarbeiter einstellen",
             body: (
               <KernContainer>
-                {/* Unvallversicherung bei Berufsgenossenschaft */}
+                {/* Unfallversicherung bei Berufsgenossenschaft */}
                 <KernRow>
                   <KernColumn sizes={12}>
                     <KernHeading level={4}>Unvallversicherung bei Berufsgenossenschaft</KernHeading>
                     <KernText>
-                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      Für die Einstellung von Mitarbeitern ist die Beantragung einer Betriebsnummer erforderlich. Sie dient der Identifikation Ihres Unternehmens gegenüber den Sozialversicherungsträgern. Der Antrag kann online beim Betriebsnummern-Service der Bundesagentur für Arbeit gestellt werden
                     </KernText>
                     <KernRow>
                       <KernColumn sizes={12}>
@@ -222,7 +222,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
                   <KernColumn sizes={12}>
                     <KernHeading level={4}>Betriebsnummer beantragen</KernHeading>
                     <KernText>
-                      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                      Für die Einstellung von Mitarbeitern ist die Beantragung einer Betriebsnummer erforderlich. Sie dient der Identifikation Ihres Unternehmens gegenüber den Sozialversicherungsträgern. Der Antrag kann online beim Betriebsnummern-Service der Bundesagentur für Arbeit gestellt werden
                     </KernText>
                     <KernRow>
                       <KernColumn sizes={12}>
@@ -245,7 +245,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
             <KernColumn sizes={12}>
               <KernHeading level={4}>Eintrag ins Transparenzregister</KernHeading>
               <KernText>
-                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam est.
+                Nach der Gründung tragen Sie die Gesellschaft in das Transparenzregister ein. In diesem Register werden die wirtschaftlich berechtigten Personen der Gesellschaft erfasst. Um den gesetzlichen Anforderungen zu entsprechen, sollte dieser Schritt zeitnah nach der Firmierung abgeschlossen werden.
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
@@ -260,7 +260,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
             <KernColumn sizes={12}>
               <KernHeading level={4}>IHK Anmeldung</KernHeading>
               <KernText>
-                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam est.
+                Aufgrund Ihrer Tätigkeit erfolgt die Mitgliedschaft in der Industrie- und Handelskammer (IHK) automatisch. Diese Mitgliedschaft bietet Ihnen zahlreiche Vorteile und unterstützt Sie bei Ihrem geschäftlichen Erfolg.
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
@@ -296,12 +296,12 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
       defaultOpen: true,
       body: (
         <KernContainer>
-          {/* Unternehmen anmelden */}
+          {/* Kombiantrag: Gewerbe & Steuern */}
           <KernRow>
             <KernColumn sizes={12}>
               <KernHeading level={4}>Unternehmen anmelden</KernHeading>
               <KernText>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Für Ihren Unternehmensstart sind die Gewerbeanmeldung und die Anmeldung beim Finanzamt erforderlich. Dieser Kombi-Antrag bündelt beide Prozesse und übermittelt Ihre Unterlagen direkt digital an die zuständigen Stellen.
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
@@ -341,7 +341,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
                   <KernColumn sizes={12}>
                     <KernHeading level={4}>Betriebsnummer beantragen</KernHeading>
                     <KernText>
-                      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                      Für die Einstellung von Mitarbeitern ist die Beantragung einer Betriebsnummer erforderlich. Sie dient der Identifikation Ihres Unternehmens gegenüber den Sozialversicherungsträgern. Der Antrag kann online beim Betriebsnummern-Service der Bundesagentur für Arbeit gestellt werden
                     </KernText>
                     <KernRow>
                       <KernColumn sizes={12}>
@@ -362,9 +362,9 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
           {/* Geschäftskonto */}
           <KernRow>
             <KernColumn sizes={12}>
-              <KernHeading level={4}>Geschäftskonto</KernHeading>
+              <KernHeading level={4}>Geschäftskonto eröffnen</KernHeading>
               <KernText>
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+                Eröffnen Sie ein Geschäftskonto, um private und geschäftliche Finanzen klar zu trennen. Damit stellen Sie sicher, dass Ihre Transaktionen rechtssicher dokumentiert werden und Sie jederzeit den Überblick über Ihre Finanzen behalten.
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
@@ -374,12 +374,12 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
             </KernColumn>
           </KernRow>
 
-          {/* IHK Anmeldung */}
+          {/* Mitglied bei der IHK werden */}
           <KernRow>
             <KernColumn sizes={12}>
-              <KernHeading level={4}>IHK Anmeldung</KernHeading>
+              <KernHeading level={4}>Mitglied bei der IHK werden</KernHeading>
               <KernText>
-                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam est.
+                Aufgrund Ihrer Tätigkeit erfolgt die Mitgliedschaft in der Industrie- und Handelskammer (IHK) automatisch. Diese Mitgliedschaft bietet Ihnen zahlreiche Vorteile und unterstützt Sie bei Ihrem geschäftlichen Erfolg.
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
@@ -394,7 +394,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
             <KernColumn sizes={12}>
               <KernHeading level={4}>Sozialversicherungspflicht prüfen</KernHeading>
               <KernText>
-                Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio nam libero tempore cum soluta nobis est eligendi optio.
+                Bei der Deutschen Rentenversicherung können Sie prüfen lassen, ob Sie sozialversicherungspflichtig sind. Dieses Verfahren gibt Ihnen Sicherheit und schützt Sie vor teuren Nachzahlungen.
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
