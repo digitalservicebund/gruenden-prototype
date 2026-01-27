@@ -18,7 +18,7 @@ export default function Home() {
     <>
       <Topbar />
       <Header />
-      <KernContainer>
+      <KernContainer className="pt-16 pb-16">
         <KernRow>
           <KernColumn sizes={{ xs: 12, md: 10, lg: 8 }}>
             <KernHeading level={1} size="x-large">
@@ -29,7 +29,7 @@ export default function Home() {
               Schritt für Schritt zur Gründung. Kombi-Antrag für Gewerbe und Steuernummer inklusive.
             </KernText>
 
-            <div style={{ marginTop: "2rem" }}>
+            <div className="mt-12">
               <Link href="/application">
                 <PrimaryButton text="Jetzt starten" onClick={() => {}} />
               </Link>
