@@ -105,7 +105,7 @@ export function Step2Taetigkeit({ formData, onTaetigkeitChange, onTaetigkeitFree
         <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
           <KernHeading level={2}>Womit wird sich Ihr neues Unternehmen beschäftigen?</KernHeading>
           <KernText>
-            Bitte beschreiben Sie die Tätigkeiten, die Sie in dem Unternehmen ausüben wollen.
+            Bitte beschreiben Sie die geplanten Tätigkeiten Ihres Unternehmens.
           </KernText>
         </KernColumn>
       </KernRow>
