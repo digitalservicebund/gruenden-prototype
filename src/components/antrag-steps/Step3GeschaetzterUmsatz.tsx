@@ -28,8 +28,7 @@ export function Step3GeschaetzterUmsatz() {
           Wie hoch wird Ihr geschätzter Umsatz sein?
           </KernHeading>
           <KernText>
-          Geben Sie hier Ihre geschätzten Einnahmen ein. Damit ist der Betrag gemeint, den Kunden für Ihre Leistungen an Sie zahlen (ohne Mehrwertsteuer).
-          </KernText>
+Der Umsatz ist das gesamte Geld, das Sie für Ihre Leistungen oder Waren erhalten, exklusive Mehrwertsteuer und ohne Berücksichtigung Ihrer Kosten. Eine ungefähre Schätzung reicht erstmal aus.          </KernText>
         </KernColumn>
       </KernRow>
 
