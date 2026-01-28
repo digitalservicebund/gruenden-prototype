@@ -16,14 +16,14 @@ import { Header } from "@/components/Header";
 export default function BestaetigungPage() {
   const accordionItems = [
     {
-      title: "Das Gewerbeschein",
+      title: "Ihren Gewerbeschein",
       body: (
         <KernList
           type="bullet"
           items={[
-            { content: "Das Gewerbeamt prüft jetzt Ihren Antrag." },
+            { content: "Das Gewerbeamt prüft jetzt Ihre Gewerbeanzeige." },
             { content: "In ein paar Tagen erhalten Sie den Gewerbeschein zugeschickt." },
-            { content: "Das ist die offizielle Bestätigung der Gewerbeanmeldung und ein rechtlicher Nachweis für Ihren Geschäftsbetrieb" },
+            { content: "Der Gewerbeschein ist die offizielle Bestätigung der Gewerbeanmeldung und ein rechtlicher Nachweis für Ihren Geschäftsbetrieb." },
           ]}
         />
       ),
@@ -43,13 +43,13 @@ export default function BestaetigungPage() {
       ),
     },
     {
-      title: "IHK Willkommensbrief",
+      title: "IHK-Willkommensbrief",
       body: (
         <KernList
           type="bullet"
           items={[
             { content: "Sie werden automatisch Mitglied der Industrie- und Handelskammer (IHK)." },
-            { content: "In dem Willkommensbrief finden Sie Ihre Mitgliednummer." },
+            { content: "In dem Willkommensbrief finden Sie Ihre Mitgliedsnummer." },
             { content: "Als Neugründer müssen Sie in den ersten beiden Jahren wahrscheinlich keinen Mitgliedsbeitrag zahlen." },
           ]}
         />
