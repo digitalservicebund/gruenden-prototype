@@ -17,7 +17,7 @@ export function Step5UmsatzsteuerId() {
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 10, lg: 8 }}>
           <KernHeading level={2} size="large">
-            Wollen Sie Umsatzsteuer-Identifikationsnummer beantragen?
+            Möchten Sie eine Umsatzsteuer-Identifikationsnummer beantragen?
           </KernHeading>
         </KernColumn>
       </KernRow>
