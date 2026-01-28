@@ -57,7 +57,7 @@ export function Step3GeschaetzterUmsatz() {
                 body={
                   <KernList type="bullet" items={[
                     { content: "Günstiger für Privatkunden: Sie berechnen keine Mehrwertsteuer." },
-                    { content: "Einfacher Buchhaltung: Keine monatlichen Berichte an das Finanzamt nötig." },
+                    { content: "Einfache Buchhaltung: Keine monatlichen Berichte an das Finanzamt nötig." },
                     { content: "Wichtig: Sie erhalten die Steuer für Ihre eigenen Einkäufe (z. B. Werkzeug) nicht zurück." },
                   ]} />
                 }
@@ -65,7 +65,7 @@ export function Step3GeschaetzterUmsatz() {
 
               <KernCheckbox
                 id="kleinunternehmerregelung"
-                label="Als Kleinunternehmen registeiren"
+                label="Als Kleinunternehmen anmelden"
                 checked={formData.kleinunternehmerregelung === "ja"}
                 onChange={(e) => updateFormData({ kleinunternehmerregelung: e.target.checked ? "ja" : "nein" })}
               />
