@@ -182,7 +182,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
             <KernColumn sizes={12}>
               <KernHeading level={4}>Kombiantrag: Gewerbe & Steuern</KernHeading>
               <KernText>
-                Für Ihren Unternehmensstart sind die Gewerbeanmeldung und die Anmeldung beim Finanzamt erforderlich. Dieser Kombi-Antrag bündelt beide Prozesse und übermittelt Ihre Unterlagen direkt digital an die zuständigen Stellen.
+                Für Ihren Unternehmensstart sind die Gewerbeanzeige und die steuerliche Erfassung beim Finanzamt erforderlich. Dieser Kombi-Antrag bündelt beide Prozesse und übermittelt Ihre Unterlagen direkt digital an die zuständigen Stellen.
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
@@ -207,8 +207,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
                   <KernColumn sizes={12}>
                     <KernHeading level={4}>Unvallversicherung bei Berufsgenossenschaft</KernHeading>
                     <KernText>
-                      Für die Einstellung von Mitarbeitern ist die Beantragung einer Betriebsnummer erforderlich. Sie dient der Identifikation Ihres Unternehmens gegenüber den Sozialversicherungsträgern. Der Antrag kann online beim Betriebsnummern-Service der Bundesagentur für Arbeit gestellt werden
-                    </KernText>
+                      Sobald Sie Personal beschäftigen, müssen Sie Ihr Unternehmen bei der zuständigen Berufsgenossenschaft versichern. Als Träger der gesetzlichen Unfallversicherung ist die Berufsgenossenschaft für die Absicherung Ihrer Mitarbeiter zuständig.                    </KernText>
                     <KernRow>
                       <KernColumn sizes={12}>
                         <SecondaryButton text="Mehr lesen" onClick={() => {}} icon="arrow-forward" iconPlacement="right" />
@@ -245,7 +244,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
             <KernColumn sizes={12}>
               <KernHeading level={4}>Eintrag ins Transparenzregister</KernHeading>
               <KernText>
-                Nach der Gründung tragen Sie die Gesellschaft in das Transparenzregister ein. In diesem Register werden die wirtschaftlich berechtigten Personen der Gesellschaft erfasst. Um den gesetzlichen Anforderungen zu entsprechen, sollte dieser Schritt zeitnah nach der Firmierung abgeschlossen werden.
+                Nach der Gründung tragen Sie die Gesellschaft in das Transparenzregister ein. In diesem Register werden die wirtschaftlich berechtigten Personen der Gesellschaft erfasst. Um den gesetzlichen Anforderungen zu entsprechen, sollte dieser Schritt zeitnah nach der  Eintragungs ins Handelsreigster abgeschlossen werden.
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
@@ -275,7 +274,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
             <KernColumn sizes={12}>
               <KernHeading level={4}>Sozialversicherungspflicht prüfen</KernHeading>
               <KernText>
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+                Bei der Deutschen Rentenversicherung können Sie prüfen lassen, ob Sie sozialversicherungspflichtig sind. Dieses Verfahren gibt Ihnen Sicherheit und schützt Sie vor teuren Nachzahlungen        
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
@@ -299,9 +298,9 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
           {/* Kombiantrag: Gewerbe & Steuern */}
           <KernRow>
             <KernColumn sizes={12}>
-              <KernHeading level={4}>Unternehmen anmelden</KernHeading>
+              <KernHeading level={4}>Kombiantrag: Gewerbe & Steuern</KernHeading>
               <KernText>
-                Für Ihren Unternehmensstart sind die Gewerbeanmeldung und die Anmeldung beim Finanzamt erforderlich. Dieser Kombi-Antrag bündelt beide Prozesse und übermittelt Ihre Unterlagen direkt digital an die zuständigen Stellen.
+                Für Ihren Unternehmensstart sind die Gewerbeanzeige und die steuerliche Erfassung beim Finanzamt erforderlich. Dieser Kombi-Antrag bündelt beide Prozesse und übermittelt Ihre Unterlagen direkt digital an die zuständigen Stellen.
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
