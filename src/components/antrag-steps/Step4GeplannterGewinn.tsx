@@ -62,8 +62,7 @@ export function Step4GeplannterGewinn() {
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 10, lg: 8 }}>
           <KernText>
-            Der Gewinn ergibt sich aus: Einnahmen minus Ausgaben. Das ist das Geld, das Ihnen am Ende nach Abzug aller Betriebskosten, wie Miete oder Material, bleibt.
-          </KernText>
+Gewinn bedeutet: Einnahmen minus Ausgaben. Es bezeichnet den Betrag, der nach Abzug aller Betriebskosten (z.B. Miete, Materialien usw.) am Ende übrig bleibt.          </KernText>
 
           <JahresBetraege
             diesJahrValue={formData.gewinnDiesesJahr}
