@@ -9,6 +9,16 @@ import {
 import { useFormData } from "@/contexts/FormContext";
 import { ausfuehrungOptions } from "@/app/types";
 import { MockSummaryText } from "@/components/MockSummaryText";
+import type { ComboboxOption } from "@/components/KernCombobox";
+
+// Address options (should match Step7Kontakt.tsx)
+const addressOptions: ComboboxOption[] = [
+  { value: "Prinzessinnenstrasse-8-14", label: "Prinzessinnenstrasse 8-14, 10969 Berlin" },
+  { value: "Alexanderplatz-1", label: "Alexanderplatz 1, 10178 Berlin" },
+  { value: "Unter-den-linden-77", label: "Unter den Linden 77, 10117 Berlin" },
+  { value: "Friedrichstrasse-50", label: "Friedrichstrasse 50, 10117 Berlin" },
+  { value: "Kurfuerstendamm-26", label: "Kurfürstendamm 26, 10719 Berlin" },
+];
 
 // Helper component for displaying a data row
 function DataRow({ label, value }: { label: string; value: string | undefined }) {
@@ -73,6 +83,11 @@ export function Step8AntragAbsenden() {
       "steuerabzugsbetrage": "Steuerabzugsbeträge",
     };
     return labels[key] || key;
+  };
+
+  const getAddressLabel = (value: string) => {
+    const option = addressOptions.find((opt) => opt.value === value);
+    return option?.label || value;
   };
 
   return (
@@ -162,9 +177,9 @@ export function Step8AntragAbsenden() {
 
           {/* Kontaktdaten */}
           <SectionHeading title="Kontaktdaten" />
-          <DataRow label="Persönliche Adresse" value={formData.persoenlicheAdresse} />
+          <DataRow label="Persönliche Adresse" value={formData.persoenlicheAdresse ? getAddressLabel(formData.persoenlicheAdresse) : undefined} />
           {!formData.adresseGleich && (
-            <DataRow label="Firmenadresse" value={formData.firmenAdresse} />
+            <DataRow label="Firmenadresse" value={formData.firmenAdresse ? getAddressLabel(formData.firmenAdresse) : undefined} />
           )}
           {formData.adresseGleich && (
             <DataRow label="Firmenadresse" value="Gleich wie persönliche Adresse" />
