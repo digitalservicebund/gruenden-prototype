@@ -22,6 +22,17 @@ export const rechtsformOptions: RechtsformOption[] = [
   { value: "kg", label: "Kommanditgesellschaft (KG)" },
 ];
 
+// Grammatical gender (article) for each Rechtsform
+export const rechtsformArticle: Record<Rechtsform, "ein" | "eine"> = {
+  einzelunternehmen: "ein", // das Einzelunternehmen (neuter)
+  gmbh: "eine", // die GmbH (feminine)
+  gbr: "eine", // die GbR (feminine)
+  ug: "eine", // die UG (feminine)
+  ag: "eine", // die AG (feminine)
+  ohg: "eine", // die OHG (feminine)
+  kg: "eine", // die KG (feminine)
+};
+
 export interface TaetigkeitOption {
   value: string;
   label: string;

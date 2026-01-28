@@ -15,6 +15,7 @@ import {
   type SideActivity,
   type HasEmployees,
   rechtsformOptions,
+  rechtsformArticle,
   taetigkeitOptions,
   sideActivityOptions,
 } from "@/app/types";
@@ -63,9 +64,11 @@ const getHasEmployeesTextForSummary = (value: HasEmployees) => {
 };
 
 function SummaryText({ formData }: { formData: FormData }) {
+  const article = formData.rechtsform ? rechtsformArticle[formData.rechtsform] : "eine";
+
   return (
     <KernText>
-      Sie möchten eine <strong>{getRechtsformLabel(formData.rechtsform)}</strong> gründen mit der Tätigkeit <strong>{getTaetigkeitLabels(formData.taetigkeit)}</strong>. Dies ist eine <strong>{getSideActivityLabel(formData.isSideActivity) === "Nebenberuflich" ? "Nebentätigkeit" : "Haupttätigkeit"}</strong>. {getHasEmployeesTextForSummary(formData.hasEmployees)}
+      Sie möchten {article} <strong>{getRechtsformLabel(formData.rechtsform)}</strong> gründen mit der Tätigkeit <strong>{getTaetigkeitLabels(formData.taetigkeit)}</strong>. Dies ist eine <strong>{getSideActivityLabel(formData.isSideActivity) === "Nebenberuflich" ? "Nebentätigkeit" : "Haupttätigkeit"}</strong>. {getHasEmployeesTextForSummary(formData.hasEmployees)}
     </KernText>
   );
 }
