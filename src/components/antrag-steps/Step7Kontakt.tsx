@@ -12,11 +12,11 @@ import { useFormData } from "@/contexts/FormContext";
 
 // Dummy address options for autocomplete
 const addressOptions: ComboboxOption[] = [
-  { value: "prinzessinnenstrasse-8-14", label: "Prinzessinnenstrasse 8-14, 10969 Berlin" },
-  { value: "alexanderplatz-1", label: "Alexanderplatz 1, 10178 Berlin" },
-  { value: "unter-den-linden-77", label: "Unter den Linden 77, 10117 Berlin" },
-  { value: "friedrichstrasse-50", label: "Friedrichstrasse 50, 10117 Berlin" },
-  { value: "kurfuerstendamm-26", label: "Kurfürstendamm 26, 10719 Berlin" },
+  { value: "Prinzessinnenstrasse-8-14", label: "Prinzessinnenstrasse 8-14, 10969 Berlin" },
+  { value: "Alexanderplatz-1", label: "Alexanderplatz 1, 10178 Berlin" },
+  { value: "Unter-den-linden-77", label: "Unter den Linden 77, 10117 Berlin" },
+  { value: "Friedrichstrasse-50", label: "Friedrichstrasse 50, 10117 Berlin" },
+  { value: "Kurfuerstendamm-26", label: "Kurfürstendamm 26, 10719 Berlin" },
 ];
 
 export function Step7Kontakt() {
@@ -55,7 +55,7 @@ export function Step7Kontakt() {
           <div className="mb-8">
             <KernCheckbox
               id="adresse-gleich"
-              label="Firmenadresse ist gleich wie persönliche Adresse"
+              label="Firmenadresse entspricht der persönlichen Adresse"
               checked={formData.adresseGleich}
               onChange={(e) => updateFormData({ adresseGleich: e.target.checked })}
             />
