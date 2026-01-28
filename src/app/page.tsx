@@ -26,7 +26,7 @@ export default function Home() {
             </KernHeading>
 
             <KernText>
-              Schritt für Schritt zur Gründung. Kombi-Antrag für Gewerbe und Steuernummer inklusive.
+              Schritt für Schritt zu deiner Unternehmensgründung. Mit einem kombinierten Antrag für Steuernummer und Gewerbemeldung.
             </KernText>
 
             <div className="mt-12">
