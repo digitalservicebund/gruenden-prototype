@@ -44,17 +44,14 @@ const mockSearchActivities = async (_query: string): Promise<SearchResult[]> => 
         "Einbau von Türen (außer automatischen Türen und Drehtüren), Fenstern, Tür- und Fensterrahmen aus Holz oder anderem Material",
         "Einbau von Einbauküchen, Einbauschränken, Treppen, Ladeneinrichtungen u. Ä.",
         "Einbau von Decken, beweglichen Trennwänden u. ä. Innenausbauarbeiten",
-        "Dieser Unterklasse ist der Einbau selbst hergestellter und fremd bezogener Bauelemente u. Ä. zuzuordnen.",
       ],
     },
     {
       id: "herstellung-sonstige-moebel",
-      title: "Herstellung von sonstigen Möbeln a. n. g.",
+      title: "Herstellung von sonstigen Möbeln",
       bulletPoints: [
-        "Herstellung von Gartenstühlen und -sitzmöbeln",
         "Herstellung von Schlafzimmer-, Wohnzimmer- und Gartenmöbeln usw.",
         "Herstellung von Schränken für Nähmaschinen, Fernsehgeräte usw.",
-        "Veredlung, wie z. B. Spritzen, Lackieren, Schellackpolitur oder Bespannen (außer von Polstermöbeln, Büro- und Objektmöbeln)",
       ],
     },
   ];
