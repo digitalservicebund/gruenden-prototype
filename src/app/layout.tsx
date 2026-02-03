@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <body>{children}</body>
+      <body data-kern-theme="light">{children}</body>
     </html>
   );
 }
