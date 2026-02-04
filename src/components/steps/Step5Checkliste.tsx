@@ -89,7 +89,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
             <KernColumn sizes={12}>
               <KernHeading level={4}>Wunschnamen auf Verfügbarkeit prüfen</KernHeading>
               <KernText>
-               Um eine reibungslose Eintragung in das Handelsregister zu gewährleisten, sollten Sie Ihren Wunschnamen vor der notariellen Beurkundung prüfen. Die IHK Berlin bietet hierfür einen speziellen Service zur Vorabklärung an.
+               Um eine reibungslose Eintragung in das Handelsregister zu gewährleisten, sollten Sie Ihren gewünschten Unternehmensnamen vor der notariellen Beurkundung prüfen. Die IHK Berlin bietet hierfür einen speziellen Service zur Vorabklärung an.
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
@@ -104,7 +104,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
             <KernColumn sizes={12}>
               <KernHeading level={4}>Gesellschaftsvertrag aufsetzen</KernHeading>
               <KernText>
-                Der Gesellschaftsvertrag bildet das rechtliche Fundament Ihres Unternehmens. Hierin legen Sie wichtige Spielregeln wie die Gewinnverteilung und die Geschäftsführung fest. Ein sorgfältig aufgesetzter Vertrag sorgt von Anfang an für Klarheit zwischen den Gesellschaftern und beugt späteren Konflikten vor.
+                Der Gesellschaftsvertrag bildet das rechtliche Fundament Ihres Unternehmens. Hierin legen Sie wichtige Vereinbarungen wie die Gewinnverteilung und die Geschäftsführung fest. Ein sorgfältig aufgesetzter Vertrag sorgt von Anfang an für Klarheit zwischen den Gesellschaftern und beugt späteren Konflikten vor.
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
@@ -125,7 +125,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
             <KernColumn sizes={12}>
               <KernHeading level={4}>Notariell gründen</KernHeading>
               <KernText>
-                Die Gründung einer GmbH erfordert eine notarielle Beurkundung des Gesellschaftsvertrages. Dieser Termin kann auch digital im Wege einer Videokonferenz durchgeführt werden. Dabei erfolgt die Identitätsprüfung und die Unterzeichnung der Dokumente rein digital.
+                Die Gründung einer GmbH erfordert eine notarielle Beurkundung des Gesellschaftsvertrages. Dieser Termin kann auch digital über eine Videokonferenz durchgeführt werden. Dabei erfolgen die Identitätsprüfung und die Unterzeichnung der Dokumente rein digital.
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
@@ -155,7 +155,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
             <KernColumn sizes={12}>
               <KernHeading level={4}>Stammkapitel nachweisen</KernHeading>
               <KernText>
-                Nachdem Sie das Stammkapital auf Ihres Geschäftskonto eingezahlt haben, reichen Sie den Nachweis der Einzahlung bei Ihrem Notar ein. Dies ist die notwendige Voraussetzung für die Einreichung der Gründungsunterlagen beim Handelsregister.
+                Nachdem Sie das Stammkapital auf Ihr Geschäftskonto eingezahlt haben, reichen Sie den Nachweis der Einzahlung bei Ihrem Notar ein. Dies ist die Voraussetzung für die Einreichung der Gründungsunterlagen beim Handelsregister.
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
@@ -185,7 +185,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
             <KernColumn sizes={12}>
               <KernHeading level={4}>Kombiantrag: Gewerbe & Steuern</KernHeading>
               <KernText>
-                Für Ihren Unternehmensstart sind die Gewerbeanzeige und die steuerliche Erfassung beim Finanzamt erforderlich. Dieser Kombi-Antrag bündelt beide Prozesse und übermittelt Ihre Unterlagen direkt digital an die zuständigen Stellen.
+                Für Ihren Unternehmensstart sind die Gewerbeanzeige und die steuerliche Erfassung beim Finanzamt erforderlich. Dieser Kombiantrag bündelt beide Prozesse und übermittelt Ihre Unterlagen direkt digital an die zuständigen Stellen.
               </KernText>
               <KernRow>
                 <KernColumn sizes={12}>
@@ -205,12 +205,12 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
             title: "Mitarbeiter einstellen",
             body: (
               <KernContainer>
-                {/* Unfallversicherung bei Berufsgenossenschaft */}
+                {/* Unfallversicherung bei den Berufsgenossenschaft */}
                 <KernRow>
                   <KernColumn sizes={12}>
                     <KernHeading level={4}>Unvallversicherung bei Berufsgenossenschaft</KernHeading>
                     <KernText>
-                      Sobald Sie Personal beschäftigen, müssen Sie Ihr Unternehmen bei der zuständigen Berufsgenossenschaft versichern. Als Träger der gesetzlichen Unfallversicherung ist die Berufsgenossenschaft für die Absicherung Ihrer Mitarbeiter zuständig.                    </KernText>
+                      Sobald Sie Mitarbeitende beschäftigen, müssen Sie Ihr Unternehmen bei der zuständigen Berufsgenossenschaft versichern. Als Träger der gesetzlichen Unfallversicherung ist die Berufsgenossenschaft für die Absicherung Ihrer Mitarbeitende zuständig.                    </KernText>
                     <KernRow>
                       <KernColumn sizes={12}>
                         <SecondaryButton text="Mehr lesen" onClick={() => {}} icon="arrow-forward" iconPlacement="right" />
@@ -224,7 +224,7 @@ export function Step5Checkliste({ formData }: Step5ChecklisteProps) {
                   <KernColumn sizes={12}>
                     <KernHeading level={4}>Betriebsnummer beantragen</KernHeading>
                     <KernText>
-                      Für die Einstellung von Mitarbeitern ist die Beantragung einer Betriebsnummer erforderlich. Sie dient der Identifikation Ihres Unternehmens gegenüber den Sozialversicherungsträgern. Der Antrag kann online beim Betriebsnummern-Service der Bundesagentur für Arbeit gestellt werden
+                      Für die Einstellung von Mitarbeitenden ist die Beantragung einer Betriebsnummer erforderlich. Sie dient der Identifikation Ihres Unternehmens gegenüber den Sozialversicherungsträgern. Der Antrag kann online beim Betriebsnummern-Service der Bundesagentur für Arbeit gestellt werden.
                     </KernText>
                     <KernRow>
                       <KernColumn sizes={12}>
