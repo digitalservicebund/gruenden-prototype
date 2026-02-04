@@ -76,7 +76,7 @@ Gewinn bedeutet: Einnahmen minus Ausgaben. Es bezeichnet den Betrag, der nach Ab
             <KernFieldset label="Haben Sie weitere Gewinne?">
               <KernCheckbox
                 id="selbstaendige-arbeit"
-                label="aus selbständiger Arbeit"
+                label="aus selbstständiger Arbeit"
                 checked={formData.weitereGewinne.includes("selbstaendige-arbeit")}
                 onChange={(e) => handleCheckboxChange("selbstaendige-arbeit", e.target.checked)}
               />
@@ -98,7 +98,7 @@ Gewinn bedeutet: Einnahmen minus Ausgaben. Es bezeichnet den Betrag, der nach Ab
 
               <KernCheckbox
                 id="nichtselbstaendige-arbeit"
-                label="aus nichtselbständiger Arbeit"
+                label="aus nichtselbstständiger Arbeit"
                 checked={formData.weitereGewinne.includes("nichtselbstaendige-arbeit")}
                 onChange={(e) => handleCheckboxChange("nichtselbstaendige-arbeit", e.target.checked)}
               />
