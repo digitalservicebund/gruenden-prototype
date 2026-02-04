@@ -28,7 +28,7 @@ export function Step3GeschaetzterUmsatz() {
           Wie hoch wird Ihr geschätzter Umsatz sein?
           </KernHeading>
           <KernText>
-Der Umsatz ist das gesamte Geld, das Sie für Ihre Leistungen oder Waren erhalten, exklusive Mehrwertsteuer und ohne Berücksichtigung Ihrer Kosten. Eine ungefähre Schätzung reicht erstmal aus.          </KernText>
+Der Umsatz ist der gesamte Erlös, den Sie für Ihre Leistungen oder Waren erhalten, exklusive Mehrwertsteuer und ohne Berücksichtigung Ihrer Kosten. Eine ungefähre Schätzung reicht zunächst aus.          </KernText>
         </KernColumn>
       </KernRow>
 
