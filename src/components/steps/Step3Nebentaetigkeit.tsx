@@ -47,7 +47,7 @@ export function Step3Nebentaetigkeit({ formData, onSideActivityChange }: Step3Ne
               body={
                 <KernList type="bullet" items={[
                   { content: "Sie arbeiten weiter in Ihrem Hauptberuf" },
-                  { content: "Ihr Einkommen aus Ihrer Selbständigkeit ist geringer als aus Ihrer Haupttätigkeit" },
+                  { content: "Ihr Einkommen aus Ihrer Selbstständigkeit ist geringer als aus Ihrer Haupttätigkeit" },
                   { content: "Sie bleiben über Ihren Hauptberuf weiter sozialversichert" },
                 ]} />
               }
