@@ -17,7 +17,7 @@ export function Step4Angestellte({ formData, onHasEmployeesChange }: Step4Angest
     <>
       <KernRow>
         <KernColumn sizes={{ xs: 12, md: 8, lg: 6 }}>
-          <KernHeading level={2}>Planen Sie, Mitarbeiter einzustellen?</KernHeading>
+          <KernHeading level={2}>Planen Sie Mitarbeitende einzustellen?</KernHeading>
         </KernColumn>
       </KernRow>
 
