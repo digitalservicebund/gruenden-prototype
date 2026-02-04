@@ -22,7 +22,7 @@ export default function BestaetigungPage() {
           type="bullet"
           items={[
             { content: "Das Gewerbeamt prüft jetzt Ihre Gewerbeanzeige." },
-            { content: "In ein paar Tagen erhalten Sie den Gewerbeschein zugeschickt." },
+            { content: "In ein paar Tagen erhalten Sie den Gewerbeschein." },
             { content: "Der Gewerbeschein ist die offizielle Bestätigung der Gewerbeanmeldung und ein rechtlicher Nachweis für Ihren Geschäftsbetrieb." },
           ]}
         />
