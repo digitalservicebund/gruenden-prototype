@@ -156,7 +156,7 @@ export function RechtsformHelper({ onSelect }: RechtsformHelperProps) {
             <KernColumn sizes={12}>
               <KernRadioGroup
                 name="founderCount"
-                legend="Gründest du alleine oder im Team?"
+                legend="Gründen Sie alleine oder im Team?"
                 selected={formData.founderCount}
                 items={[
                   { value: "alone", label: "Ich gründe alleine" },
@@ -175,7 +175,7 @@ export function RechtsformHelper({ onSelect }: RechtsformHelperProps) {
             <KernColumn sizes={12}>
               <KernRadioGroup
                 name="liabilityPreference"
-                legend="Möchtest du dein Privatvermögen schützen (Haftungsbeschränkung)?"
+                legend="Möchten Sie Ihr Privatvermögen schützen (Haftungsbeschränkung)?"
                 selected={formData.liabilityPreference}
                 items={[
                   { value: "limited", label: "Ja, Haftungsbeschränkung ist wichtig" },
@@ -194,7 +194,7 @@ export function RechtsformHelper({ onSelect }: RechtsformHelperProps) {
             <KernColumn sizes={12}>
               <KernRadioGroup
                 name="capitalAvailable"
-                legend="Wie viel Startkapital hast du zur Verfügung?"
+                legend="Wie viel Startkapital haben Sie zur Verfügung?"
                 selected={formData.capitalAvailable}
                 items={[
                   { value: "minimal", label: "Wenig (unter 1.000 €)" },

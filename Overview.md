@@ -42,7 +42,7 @@ src/
 - Must choose from predefined options (currently: Eisanbieter, Eiscafe, Eisdiele, Eisenbahngesellschaft)
 
 ### Step 3: Nebentätigkeit (Side Activity)
-- Yes/No question: "Wird dein Startup erstmal eine Nebentätigkeit sein?"
+- Yes/No question: "Wird Ihr Startup erstmal eine Nebentätigkeit sein?"
 - If "Ja" selected, shows info alert about health insurance implications
 
 ### Step 4: Angestellte (Employees)
