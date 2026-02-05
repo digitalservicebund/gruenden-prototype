@@ -34,7 +34,7 @@ const mockSearchActivities = async (_query: string): Promise<SearchResult[]> => 
       title: "Reparatur von Möbeln und Einrichtungsgegenständen",
       bulletPoints: [
         "Aufpolstern, Reparieren und Restaurieren von Möbeln und Einrichtungsgegenständen (einschließlich Büromöbel)",
-        "Zusammenbau / Aufbau von frei stehenden Möbeln",
+        "Zusammenbau / Aufbau von freistehenden Möbeln",
       ],
     },
     {
@@ -42,7 +42,7 @@ const mockSearchActivities = async (_query: string): Promise<SearchResult[]> => 
       title: "Bautischlerei und -schlosserei",
       bulletPoints: [
         "Einbau von Türen (außer automatischen Türen und Drehtüren), Fenstern, Tür- und Fensterrahmen aus Holz oder anderem Material",
-        "Einbau von Einbauküchen, Einbauschränken, Treppen, Ladeneinrichtungen u. Ä.",
+        "Einbau von Einbauküchen, Einbauschränken, Treppen, Ladeneinrichtungen und ähnlichem",
         "Einbau von Decken, beweglichen Trennwänden u. ä. Innenausbauarbeiten",
       ],
     },
