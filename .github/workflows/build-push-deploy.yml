@@ -79,21 +79,21 @@ jobs:
       #   with:
       #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
-  deploy-to-production:
-    runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/main' }}
-    environment: production
-    needs: build-push-image
-    steps:
-      - name: Deploy latest container image
-        uses: digitalservicebund/argocd-deploy@6033da861398e0d7fcffe1b195f8d58f10b62c4e # auth-token branch
-        with:
-          environment: production/gruenden-prototype
-          version: ${{ github.sha }}
-          deploying_repo: ${{ github.event.repository.name }}
-          infra_repo: ${{ env.INFRA_REPO }}
-          github_app_id: ${{ secrets.GITOPS_INTERNAL_APP_ID }}
-          github_app_private_key: ${{ secrets.GITOPS_INTERNAL_APP_PRIVATE_KEY }}
-          app: ${{ env.PROJECT_NAME }}-production
-          argocd_auth_token: ${{ secrets.ARGOCD_AUTH_TOKEN }}
-          argocd_server: ${{ secrets.ARGOCD_SERVER_STACKIT }}
+  # deploy-to-production:
+  #   runs-on: ubuntu-latest
+  #   if: ${{ github.ref == 'refs/heads/main' }}
+  #   environment: production
+  #   needs: build-push-image
+  #   steps:
+  #     - name: Deploy latest container image
+  #       uses: digitalservicebund/argocd-deploy@6033da861398e0d7fcffe1b195f8d58f10b62c4e # auth-token branch
+  #       with:
+  #         environment: production/gruenden-prototype
+  #         version: ${{ github.sha }}
+  #         deploying_repo: ${{ github.event.repository.name }}
+  #         infra_repo: ${{ env.INFRA_REPO }}
+  #         github_app_id: ${{ secrets.GITOPS_INTERNAL_APP_ID }}
+  #         github_app_private_key: ${{ secrets.GITOPS_INTERNAL_APP_PRIVATE_KEY }}
+  #         app: ${{ env.PROJECT_NAME }}-production
+  #         argocd_auth_token: ${{ secrets.ARGOCD_AUTH_TOKEN }}
+  #         argocd_server: ${{ secrets.ARGOCD_SERVER_STACKIT }}
